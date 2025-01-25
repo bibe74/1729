@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="OrphanedUsers">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="tools_00.00_source_and_usage.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>tools_00.00_source_and_usage.sql</FullPath>
+        </FileNode>
+        <FileNode Name="tools_00.01_schemata.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>tools_00.01_schemata.sql</FullPath>
+        </FileNode>
+        <FileNode Name="tools_00.02_Type.Common.DatabaseNameList.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>tools_00.02_Type.Common.DatabaseNameList.sql</FullPath>
+        </FileNode>
+        <FileNode Name="tools_00.03_Procedure.Common.RunQueryAcrossDatabases.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>tools_00.03_Procedure.Common.RunQueryAcrossDatabases.sql</FullPath>
+        </FileNode>
+        <FileNode Name="tools_00.04_Procedure.Administration.FindOrphanUsers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>tools_00.04_Procedure.Administration.FindOrphanUsers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="tools_00.05_Procedure.Administration.DropDatabaseUser.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>tools_00.05_Procedure.Administration.DropDatabaseUser.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

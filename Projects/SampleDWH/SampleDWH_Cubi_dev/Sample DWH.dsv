@@ -1,0 +1,163 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8e4fea29-a072-4a4c-b2ac-8592323a5bb8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sample DWH</ID>
+  <Name>Sample DWH</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10815" scrolltop="-10438" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="52388" y="32703" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Date" left="0" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3466" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e00008a0d000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Dim_Date" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-10815</DiagramViewPortLeft>
+            <DiagramViewPortTop>-10438</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Sample DWH</DataSourceID>
+  <Schema>
+    <xs:schema id="Sample_x0020_DWH" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Sample_x0020_DWH" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="4e73a45b-b360-4c49-a4e2-cddff4f310d5">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Dim_Date" msprop:design-time-name="3c491f56-c0a7-4ea7-82c3-8e53f3bd9713" msprop:FriendlyName="Date" msprop:DbSchemaName="Dim" msprop:DbTableName="Date" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DateKey" msprop:design-time-name="1cfdf2dd-7d8f-438d-ba36-c251d1944a9b" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey" type="xs:int" />
+                  <xs:element name="Date" msprop:design-time-name="359c77c5-9062-46d7-b1e5-99d3ca28a452" msprop:DbColumnName="Date" msprop:FriendlyName="Date">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="HistoricalHashKey" msprop:design-time-name="87a74a07-3b18-4ac3-a737-8db064677e09" msprop:DataSize="20" msprop:DbColumnName="HistoricalHashKey" msprop:FriendlyName="HistoricalHashKey" type="xs:base64Binary" minOccurs="0" />
+                  <xs:element name="ChangeHashKey" msprop:design-time-name="eb909e58-6e15-4fdb-aa79-ebd78e552c41" msprop:DataSize="20" msprop:DbColumnName="ChangeHashKey" msprop:FriendlyName="ChangeHashKey" type="xs:base64Binary" minOccurs="0" />
+                  <xs:element name="InsertDatetime" msprop:design-time-name="9e62d1b3-dd68-470e-bf62-84a0900f5223" msprop:DbColumnName="InsertDatetime" msprop:FriendlyName="InsertDatetime" type="xs:dateTime" />
+                  <xs:element name="UpdateDatetime" msprop:design-time-name="0ecc84d2-acd8-407b-ba57-02006f753e6c" msprop:DbColumnName="UpdateDatetime" msprop:FriendlyName="UpdateDatetime" type="xs:dateTime" />
+                  <xs:element name="IsDeleted" msprop:design-time-name="58e77ad8-b608-437f-847a-d3b20465457e" msprop:DbColumnName="IsDeleted" msprop:FriendlyName="IsDeleted" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="DateName" msprop:design-time-name="ea2b3d8a-ca5a-4511-a24d-7299cd835475" msprop:DbColumnName="DateName" msprop:FriendlyName="DateName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Year" msprop:design-time-name="41e05b8c-d6d8-467c-9e67-fbd6467abbcb" msprop:DbColumnName="Year" msprop:FriendlyName="Year">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Quarter" msprop:design-time-name="81d9e088-ed13-4168-905e-0b313d079328" msprop:DbColumnName="Quarter" msprop:FriendlyName="Quarter">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="QuarterName" msprop:design-time-name="feda5290-fa4d-4cea-a9f0-4c5a33d1a730" msprop:DbColumnName="QuarterName" msprop:FriendlyName="QuarterName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Month" msprop:design-time-name="a2499f5f-f23c-4777-a5ec-d421ca66185f" msprop:DbColumnName="Month" msprop:FriendlyName="Month" type="xs:unsignedByte" />
+                  <xs:element name="MonthName" msprop:design-time-name="23e1903c-4382-46bd-b807-0d8ea12eec41" msprop:DbColumnName="MonthName" msprop:FriendlyName="MonthName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="9" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DayOfMonth" msprop:design-time-name="ca53658f-a9da-4102-b1a5-5500f88af3c6" msprop:DbColumnName="DayOfMonth" msprop:FriendlyName="DayOfMonth" type="xs:unsignedByte" />
+                  <xs:element name="WeekOfYear" msprop:design-time-name="c6857fb7-928e-44ae-998d-90f16589bad4" msprop:DbColumnName="WeekOfYear" msprop:FriendlyName="WeekOfYear" type="xs:unsignedByte" />
+                  <xs:element name="YearMonth" msprop:design-time-name="9ea5986d-bfd1-4e67-95e2-2880159d469b" msprop:DbColumnName="YearMonth" msprop:FriendlyName="YearMonth" type="xs:int" />
+                  <xs:element name="YearMonthName" msprop:design-time-name="96707244-808f-4977-98b8-f7e13d848e91" msprop:DbColumnName="YearMonthName" msprop:FriendlyName="YearMonthName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="14" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="YearQuarter" msprop:design-time-name="f44e834e-1c8d-4dcc-8d2f-83e98b42b7ab" msprop:DbColumnName="YearQuarter" type="xs:int" minOccurs="0" />
+                  <xs:element name="YearQuarterName" msprop:design-time-name="2f5edf96-e3fd-4d29-9e7d-2acdcc14195b" msprop:DbColumnName="YearQuarterName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="7" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="YearWeek" msprop:design-time-name="154d60f9-528c-476c-9334-9a27a26c1c55" msprop:DbColumnName="YearWeek" type="xs:int" minOccurs="0" />
+                  <xs:element name="YearWeekName" msprop:design-time-name="b07fc344-e042-4b5a-afe6-248399270aa8" msprop:DbColumnName="YearWeekName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="7" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Dim_Date" />
+          <xs:field xpath="DateKey" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <Sample_x0020_DWH xmlns="" />
+  </Schema>
+</DataSourceView>

@@ -1,0 +1,525 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8ee978d2-383e-4548-ab1d-14819586a7b7" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Invoices</ID>
+  <Name>Invoices</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="11" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-11229" scrolltop="21" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="96" x="34264" y="16828" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Invoices" left="2635" top="7400" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4710" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006612000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Fact_Invoices" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Date" left="20" top="0" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3810" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000e20e000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="VATCode" left="9745" top="8749" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_VATCode" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Category" left="3310" top="14800" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3360" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000200d0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Category" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Customer" left="6230" top="1349" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3731" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000930e0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dim_Customer" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1526" top="4501" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="2664" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Invoices_InvoiceDateKey]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="7" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1925" y="5000" />
+              <point x="1925" y="6200" />
+              <point x="3890" y="6200" />
+              <point x="3890" y="7400" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5240" top="3152" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3255" height="4548" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Invoices_CustomerKey]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="7" destattachpoint="10" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8095" y="3651" />
+              <point x="8095" y="5525" />
+              <point x="5540" y="5525" />
+              <point x="5540" y="7400" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="4591" top="12100" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Invoices_CategoryKey]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="4" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4990" y="14800" />
+              <point x="4990" y="12400" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7045" top="9501" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Fact_Invoices_VatCodeKey]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="12" destattachpoint="27" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9745" y="9900" />
+              <point x="7345" y="9900" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3530" top="2101" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_Dim_Customer_FirstInvoiceDateKey]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="5" sourceattachpoint="23" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3830" y="2500" />
+              <point x="6230" y="2500" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-11229</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>21</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>96</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="643ca122-c66a-461f-866a-70a33201e5a4">
+      <ID>Invoices</ID>
+      <Name>Invoices</Name>
+      <DimensionID>Invoices</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="1c188d0e-afb1-4bec-8bfe-b9de2eab5215">
+          <AttributeID>Invoice Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e7aab48d-03fc-4a02-9c2c-eb93c2ca3797">
+          <AttributeID>Invoice Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4a917b43-64ad-43df-95ed-12c6bbf43721">
+          <AttributeID>Invoice Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6f21c52c-0add-4976-be6e-463685caf15f">
+          <AttributeID>Invoice ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a2dd2c76-d1ec-455f-a5c1-95e99ea98d27">
+          <AttributeID>Invoice Date Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="adb665e1-6b56-4734-aef3-2c0008994123">
+          <AttributeID>Customer Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="120b56ec-ee31-4117-86f7-41e11a027bbc">
+          <AttributeID>Category Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d390381a-72e8-4d63-b6fb-5a91051f8d43">
+          <AttributeID>Vat Code Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="16ddc18a-f8b3-4d5b-b651-f327baee134a">
+      <ID>Customer</ID>
+      <Name>Customer</Name>
+      <DimensionID>Customer</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f47922c7-cc31-4d76-a53d-c2c72d282ad3">
+          <AttributeID>Customer Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f9f96dd5-b63c-4d4c-92ab-92b4d444fefb">
+          <AttributeID>Customer Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="1e2fdd6a-1e98-4093-a0b6-3066df12eb6b">
+      <ID>Category</ID>
+      <Name>Category</Name>
+      <DimensionID>Category</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b4b3f0e9-d726-4a3d-8902-0e86ae42095b">
+          <AttributeID>Category Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="07f71441-a2e4-4ec3-8718-9b5184303205">
+          <AttributeID>Category Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2a2b1730-77fe-4dff-8ac6-7067b085c95e">
+          <AttributeID>Is Extra Consulting</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="d94c9b45-d5e2-4599-8908-83c745d9fed3">
+      <ID>Vat Code</ID>
+      <Name>Vat Code</Name>
+      <DimensionID>VAT Code</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9faed7c8-301d-4054-9581-2b92938239d6">
+          <AttributeID>VAT Code Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a1d1f652-e8d0-4bcb-8bca-ed614435b251">
+          <AttributeID>VAT Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3220402b-40f9-47e3-b7c6-e0c8bd5b1175">
+          <AttributeID>VAT Percent</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c829d0df-cae6-4e8c-9488-aaa1011bfb10">
+      <ID>Date</ID>
+      <Name>Date</Name>
+      <DimensionID>Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="55517325-fd0e-48c1-a213-2706b2b766f7">
+          <AttributeID>Date Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bffb3f14-e23a-4c46-a33d-db76955583d4">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="18818462-ffa7-4d8f-9e93-54d29d99952b">
+          <AttributeID>Day Of Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="206f51ed-e1f7-4d11-a3ab-4c81a22ca1f9">
+          <AttributeID>Day Of Week UK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9b1d380a-f429-459a-b9a4-d89361d78247">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3e3cc8e6-f5b1-4d27-b9af-7e7d68798c32">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0fc92f39-b1d4-46a6-b9c6-567f46153bcf">
+          <AttributeID>Month Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="f6c41064-305a-4bb2-928d-225bb2dc78b0">
+      <ID>Invoices</ID>
+      <Name>Invoices</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="51fec27d-41a9-4af7-ac91-e5d2cb9360e7">
+          <ID>Line Amount</ID>
+          <Name>Line Amount</Name>
+          <Source dwd:design-time-name="66f8978c-2e80-4707-9afe-b2ecf72f747f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="86132c65-1353-4f0a-859c-5ae5b9121610">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>LineAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="435c1ff4-b326-49c8-9e3b-c5ed5179aa9d">
+          <ID>Partial Compensation Amount</ID>
+          <Name>Partial Compensation Amount</Name>
+          <Source dwd:design-time-name="4b049840-54aa-484b-b37f-d54f72f8805b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d55ccfb0-4822-490f-b8d7-df34f3f6d8a4">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>PartialCompensationAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="03ac209d-51c0-42d8-9512-a9259b5913ff">
+          <ID>Invoice Amount</ID>
+          <Name>Invoice Amount</Name>
+          <Source dwd:design-time-name="4a3f5c75-1b5b-42c3-944b-20472458d9b0">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="95faa0a5-e886-4274-99ef-73f92449d862">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>InvoiceAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8f3f4322-6fc6-48ee-a1ac-f2065b8054a0">
+          <ID>VAT Amount</ID>
+          <Name>VAT Amount</Name>
+          <Source dwd:design-time-name="a9c337c3-6564-49c7-8139-0bd448b482ce">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6a698a69-8845-4110-88f8-bd7c734e8d4f">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>VATAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b6d1a9f0-a666-438a-af58-0c7cdf407f66">
+          <ID>Total Amount</ID>
+          <Name>Total Amount</Name>
+          <Source dwd:design-time-name="6884838d-2340-450d-9f01-f32177cfa285">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a9ab7d00-0e6c-4db4-9068-dc1125765fea">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>TotalAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5b587210-dedf-4a58-a26f-5681e1f937a9">
+          <ID>With Holding Tax Amount</ID>
+          <Name>With Holding Tax Amount</Name>
+          <Source dwd:design-time-name="a3dc8d07-95ed-466c-b55e-7b7515e53727">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="05491f84-1a2c-49d3-bd2c-0c77aed6189a">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>WithHoldingTaxAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="015c9108-8386-42ea-9aa3-0585abac309e">
+          <ID>Net To Pay Amount</ID>
+          <Name>Net To Pay Amount</Name>
+          <Source dwd:design-time-name="23971f32-0921-4b63-b724-5b9a4a2977f9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ff6428bc-5fb9-468d-a44e-ce3fc2454083">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>NetToPayAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="028d4a63-4a4c-4a5e-bf1f-3472f016c24e">
+          <ID>Paid Amount</ID>
+          <Name>Paid Amount</Name>
+          <Source dwd:design-time-name="21378633-d5b8-486e-84b1-f4317fd26b64">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1ac625bd-42e9-4670-bfc7-bac36eeadc79">
+              <TableID>Fact_Invoices</TableID>
+              <ColumnID>PaidAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f0fbb794-f24d-4226-8703-d405991330ce">
+          <ID>Invoices Count</ID>
+          <Name>Invoices Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="7bb9c861-36b2-484a-9557-ae05beb97420">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="7212cea7-4d0e-4f4a-9d65-120e4478320d">
+              <TableID>Fact_Invoices</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="cba3ed64-99c9-4041-b428-907b9b4a7503">
+          <CubeDimensionID>Invoices</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f616392e-1200-410d-b615-ad19f85c2074">
+              <AttributeID>Invoice Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="7f157838-3fb5-426d-ba1e-8f410a54325a">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ea31f175-a96e-4f62-aeec-4843a2cf8f44">
+                    <TableID>Fact_Invoices</TableID>
+                    <ColumnID>InvoiceKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a7b9a93e-23d2-4592-8f7e-538ba69152d3">
+          <CubeDimensionID>Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="16a9adeb-a224-45c0-8811-f27afb146098">
+              <AttributeID>Date Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8bef48f0-5fa2-4182-9053-e7219611a847">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b4ca8285-6b27-437c-ad6c-45e4783dcdfc">
+                    <TableID>Fact_Invoices</TableID>
+                    <ColumnID>InvoiceDateKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="414edaec-a149-4bc6-8516-312984a08d40">
+          <CubeDimensionID>Customer</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6253c0da-9586-427c-a040-5c3ce63c8e69">
+              <AttributeID>Customer Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="72dd8e79-c945-49ac-a52f-d07d9fbc0085">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="15bcbe52-3c8c-498a-8df1-7fc733e5f668">
+                    <TableID>Fact_Invoices</TableID>
+                    <ColumnID>CustomerKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="251c2967-7d0f-4a52-bad2-4ec6aac74182">
+          <CubeDimensionID>Category</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e49066e5-6979-4ce7-8644-143eb15875b9">
+              <AttributeID>Category Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="68ae9e40-074e-4d17-97c4-3c3a79047e4b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c6368288-c17d-4318-bfe0-dcf0cf8a77bf">
+                    <TableID>Fact_Invoices</TableID>
+                    <ColumnID>CategoryKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e15fd3b9-2dc9-4fae-903c-58c61d8d000e">
+          <CubeDimensionID>Vat Code</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="cfdc7b2c-bb9f-40d5-8b10-9153b572b850">
+              <AttributeID>VAT Code Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4849fb66-7720-41b0-9166-8e40b1b635fd">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ea014ccf-a4c9-492c-976e-f64e55c6908c">
+                    <TableID>Fact_Invoices</TableID>
+                    <ColumnID>VatCodeKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="753c1e08-2c98-463f-9d17-4613e444961a">
+    <DataSourceViewID>DW1729</DataSourceViewID>
+  </Source>
+</Cube>

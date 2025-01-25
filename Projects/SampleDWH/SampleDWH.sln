@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33801.447
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SampleDWH_Cubi_dev", "SampleDWH_Cubi_dev\SampleDWH_Cubi_dev.dwproj", "{20CA14ED-0E03-46EA-9BA1-1C256C1FA7FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20CA14ED-0E03-46EA-9BA1-1C256C1FA7FE}.Development|Default.ActiveCfg = Development
+		{20CA14ED-0E03-46EA-9BA1-1C256C1FA7FE}.Development|Default.Build.0 = Development
+		{20CA14ED-0E03-46EA-9BA1-1C256C1FA7FE}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3D214F9-4A8B-4831-8D7D-F5A4CC441C33}
+	EndGlobalSection
+EndGlobal

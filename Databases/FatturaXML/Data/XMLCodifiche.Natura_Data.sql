@@ -1,0 +1,8 @@
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('  ', N'')
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('N1', N'escluse ex art. 15')
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('N2', N'non soggette')
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('N3', N'non imponibili')
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('N4', N'esenti')
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('N5', N'regime del margine / IVA non esposta in fattura')
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('N6', N'inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)')
+INSERT INTO [XMLCodifiche].[Natura] ([IDNatura], [Natura]) VALUES ('N7', N'IVA assolta in altro stato UE (vendite a distanza ex art. 40 c. 3 e 4 e art. 41 c. 1 lett. b,  DL 331/93; prestazione di servizi di telecomunicazioni, tele-radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, art. 74-sexies DPR 633/72)')

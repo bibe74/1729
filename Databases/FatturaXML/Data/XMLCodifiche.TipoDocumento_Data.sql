@@ -1,0 +1,7 @@
+INSERT INTO [XMLCodifiche].[TipoDocumento] ([IDTipoDocumento], [TipoDocumento]) VALUES ('    ', N'')
+INSERT INTO [XMLCodifiche].[TipoDocumento] ([IDTipoDocumento], [TipoDocumento]) VALUES ('TD01', N'fattura')
+INSERT INTO [XMLCodifiche].[TipoDocumento] ([IDTipoDocumento], [TipoDocumento]) VALUES ('TD02', N'acconto/anticipo su fattura')
+INSERT INTO [XMLCodifiche].[TipoDocumento] ([IDTipoDocumento], [TipoDocumento]) VALUES ('TD03', N'acconto/anticipo su parcella')
+INSERT INTO [XMLCodifiche].[TipoDocumento] ([IDTipoDocumento], [TipoDocumento]) VALUES ('TD04', N'nota di credito')
+INSERT INTO [XMLCodifiche].[TipoDocumento] ([IDTipoDocumento], [TipoDocumento]) VALUES ('TD05', N'nota di debito')
+INSERT INTO [XMLCodifiche].[TipoDocumento] ([IDTipoDocumento], [TipoDocumento]) VALUES ('TD06', N'parcella')

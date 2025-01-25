@@ -1,0 +1,95 @@
+/* Database InVoice
+
+1. Aggiungere schema FXML
+2. Aggiungere campi SDI
+3. Impostare valori campi SDI
+4. Aggiungere procedure di scambio:
+	4.1 FXML.usp_EsportaFattura
+	4.2 FXML.usp_EsportaDatiFattura
+        4.2.1 FXML.usp_EsportaDatiHeader
+        4.2.2 FXML.usp_EsportaDatiBody
+        4.2.3 FXML.usp_EsportaDatiBody_DettaglioLinee
+        ...
+	4.3 FXML.usp_ConvalidaFattura
+	4.4 FXML.usp_GeneraXMLFattura
+
+*/
+
+/* Database FatturaXML
+
+/**
+ * @stored_procedure XMLFatture.usp_ImportaFattura
+ * @description Importazione fattura da gestionale
+
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+
+ * @output_param @PKEsitoEvento
+ * @output_param @PKEvento
+ * @output_param @PKLanding_Fattura
+*/
+
+/**
+ * @stored_procedure XMLFatture.usp_ImportaDatiFattura
+ * @description Importazione dati fattura da gestionale
+
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+ * @input_param @PKLanding_Fattura
+ 
+ * @output_param @PKEsitoEvento
+ * @output_param @PKEvento
+ * @output_param @PKStaging_FatturaElettronicaHeader
+*/
+
+/**
+ * @stored_procedure XMLFatture.usp_ConvalidaFattura
+ * @description Convalida dati fattura importata
+
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+ * @input_param @PKStaging_FatturaElettronicaHeader
+
+ * @output_param @PKEsitoEvento
+ * @output_param @PKEvento
+ * @output_param @IsValida
+ * @output_param @PKValidazione
+ * @output_param @PKFatturaElettronicaHeader
+*/
+
+/**
+ * @stored_procedure XMLFatture.usp_GeneraXMLFattura
+ * @description Generazione file XML fattura convalidata
+
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+ * @input_param @FatturaElettronicaHeader
+
+ * @output_param @PKEsitoEvento
+ * @output_param @PKEvento
+ * @output_param @XML
+*/
+
+/**
+ * @stored_procedure XMLAudit.usp_LeggiLogEvento
+ * @description Lettura log evento
+
+ * @param_input @chiaveGestionale_CodiceNumerico
+ * @param_input @chiaveGestionale_CodiceAlfanumerico
+ * @param_input @PKEvento
+ * @param_input @LivelloLog
+
+*/
+
+/**
+ * @stored_procedure XMLAudit.usp_LeggiLogValidazione
+ * @description Lettura log Validazione
+
+ * @param_input @chiaveGestionale_CodiceNumerico
+ * @param_input @chiaveGestionale_CodiceAlfanumerico
+ * @param_input @PKValidazione
+ * @param_input @LivelloLog
+
+*/
+
+*/

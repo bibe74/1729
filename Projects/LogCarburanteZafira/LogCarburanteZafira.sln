@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "LogCarburanteZafira", "LogCarburanteZafira\LogCarburanteZafira.dwproj", "{1DDC3D44-5F22-4EFF-BD44-B6116903E746}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DDC3D44-5F22-4EFF-BD44-B6116903E746}.Development|Default.ActiveCfg = Development
+		{1DDC3D44-5F22-4EFF-BD44-B6116903E746}.Development|Default.Build.0 = Development
+		{1DDC3D44-5F22-4EFF-BD44-B6116903E746}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {853A0673-BC19-4F27-8CEC-F9A035F91037}
+	EndGlobalSection
+EndGlobal

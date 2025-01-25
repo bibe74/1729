@@ -1,0 +1,156 @@
+Tabella,IDEntita,Entita
+RegimeFiscale,RF01,Ordinario
+RegimeFiscale,RF02,"Contribuenti minimi (art.1, c.96-117, L. 244/07) "
+RegimeFiscale,RF04,"Agricoltura e attività connesse e pesca (artt.34 e 34-bis, DPR 633/72) "
+RegimeFiscale,RF05,"Vendita sali e tabacchi (art.74, c.1, DPR. 633/72) "
+RegimeFiscale,RF06,"Commercio fiammiferi (art.74, c.1, DPR  633/72) "
+RegimeFiscale,RF07,"Editoria (art.74, c.1, DPR  633/72)"
+RegimeFiscale,RF08,"Gestione servizi telefonia pubblica (art.74, c.1, DPR 633/72) "
+RegimeFiscale,RF09,"Rivendita documenti di trasporto pubblico e di sosta (art.74, c.1, DPR  633/72) "
+RegimeFiscale,RF10,"Intrattenimenti, giochi e altre attività di cui alla tariffa allegata al DPR 640/72 (art.74, c.6, DPR 633/72) "
+RegimeFiscale,RF11,"Agenzie viaggi e turismo (art.74-ter, DPR 633/72) "
+RegimeFiscale,RF12,"Agriturismo (art.5, c.2, L. 413/91) "
+RegimeFiscale,RF13,"Vendite a domicilio (art.25-bis, c.6, DPR  600/73) "
+RegimeFiscale,RF14,"Rivendita beni usati, oggetti d’arte, d’antiquariato o da collezione (art.36, DL 41/95) "
+RegimeFiscale,RF15,"Agenzie di vendite all’asta di oggetti d’arte, antiquariato o da collezione (art.40-bis, DL 41/95) "
+RegimeFiscale,RF16,"IVA per cassa P.A. (art.6, c.5, DPR 633/72) "
+RegimeFiscale,RF17,"IVA per cassa (art. 32-bis, DL 83/2012) "
+RegimeFiscale,RF18,Altro
+RegimeFiscale,RF19,"Regime forfettario (art.1, c.54-89, L. 190/2014)"
+RegimeFiscale,,
+TipoCassa,TC01,Cassa nazionale previdenza e assistenza avvocati e procuratori legali 
+TipoCassa,TC02,Cassa previdenza dottori commercialisti
+TipoCassa,TC03,Cassa previdenza e assistenza geometri
+TipoCassa,TC04,Cassa nazionale previdenza e assistenza ingegneri e architetti liberi professionisti
+TipoCassa,TC05,Cassa nazionale del notariato
+TipoCassa,TC06,Cassa nazionale previdenza e assistenza ragionieri e periti commerciali
+TipoCassa,TC07,Ente nazionale assistenza agenti e rappresentanti di commercio (ENASARCO)
+TipoCassa,TC08,Ente nazionale previdenza e assistenza consulenti del lavoro (ENPACL)
+TipoCassa,TC09,Ente nazionale previdenza e assistenza medici (ENPAM)
+TipoCassa,TC10,Ente nazionale previdenza e assistenza farmacisti (ENPAF)
+TipoCassa,TC11,Ente nazionale previdenza e assistenza veterinari (ENPAV)
+TipoCassa,TC12,Ente nazionale previdenza e assistenza impiegati dell'agricoltura (ENPAIA)
+TipoCassa,TC13,Fondo previdenza impiegati imprese di spedizione e agenzie marittime
+TipoCassa,TC14,Istituto nazionale previdenza giornalisti italiani (INPGI)
+TipoCassa,TC15,Opera nazionale assistenza orfani sanitari italiani (ONAOSI)
+TipoCassa,TC16,Cassa autonoma assistenza integrativa giornalisti italiani (CASAGIT)
+TipoCassa,TC17,Ente previdenza periti industriali e periti industriali laureati (EPPI)
+TipoCassa,TC18,Ente previdenza e assistenza pluricategoriale (EPAP)
+TipoCassa,TC19,Ente nazionale previdenza e assistenza biologi (ENPAB)
+TipoCassa,TC20,Ente nazionale previdenza e assistenza professione infermieristica (ENPAPI)
+TipoCassa,TC21,Ente nazionale previdenza e assistenza psicologi (ENPAP)
+TipoCassa,TC22,INPS
+TipoCassa,,
+ModalitaPagamento,MP01,contanti
+ModalitaPagamento,MP02,assegno
+ModalitaPagamento,MP03,assegno circolare
+ModalitaPagamento,MP04,contanti presso Tesoreria
+ModalitaPagamento,MP05,bonifico
+ModalitaPagamento,MP06,vaglia cambiario
+ModalitaPagamento,MP07,bollettino bancario
+ModalitaPagamento,MP08,carta di pagamento
+ModalitaPagamento,MP09,RID
+ModalitaPagamento,MP10,RID utenze
+ModalitaPagamento,MP11,RID veloce
+ModalitaPagamento,MP12,RIBA
+ModalitaPagamento,MP13,MAV
+ModalitaPagamento,MP14,quietanza erario
+ModalitaPagamento,MP15,giroconto su conti di contabilità speciale
+ModalitaPagamento,MP16,domiciliazione bancaria
+ModalitaPagamento,MP17,domiciliazione postale
+ModalitaPagamento,MP18,bollettino di c/c postale
+ModalitaPagamento,MP19,SEPA Direct Debit
+ModalitaPagamento,MP20,SEPA Direct Debit CORE
+ModalitaPagamento,MP21,SEPA Direct Debit B2B
+ModalitaPagamento,MP22,Trattenuta su somme già riscosse
+ModalitaPagamento,,
+TipoDocumento,TD01,fattura
+TipoDocumento,TD02,acconto/anticipo su fattura
+TipoDocumento,TD03,acconto/anticipo su parcella
+TipoDocumento,TD04,nota di credito
+TipoDocumento,TD05,nota di debito
+TipoDocumento,TD06,parcella
+TipoDocumento,,
+Natura,N1,escluse ex art. 15
+Natura,N2,non soggette
+Natura,N3,non imponibili
+Natura,N4,esenti
+Natura,N5,regime del margine / IVA non esposta in fattura
+Natura,N6,inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
+Natura,N7,"IVA assolta in altro stato UE (vendite a distanza ex art. 40 c. 3 e 4 e art. 41 c. 1 lett. b,  DL 331/93; prestazione di servizi di telecomunicazioni, tele-radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, art. 74-sexies DPR 633/72)"
+Natura,,
+TipoRitenuta,RT01,ritenuta pers. fisiche
+TipoRitenuta,RT02,ritenuta pers. giurid.
+TipoRitenuta,,
+FormatoTrasmissione,FPA12,fattura verso PA
+FormatoTrasmissione,FPR12,fattura verso privati
+FormatoTrasmissione,,
+SocioUnico,SU,socio unico
+SocioUnico,SM,più soci
+SocioUnico,,
+StatoLiquidazione,LS,in liquidazione
+StatoLiquidazione,LN,non in liquidazione
+StatoLiquidazione,,
+SoggettoEmittente,CC,cessionario / committente
+SoggettoEmittente,TZ,terzo
+SoggettoEmittente,,
+TipoScontoMaggiorazione,SC,sconto
+TipoScontoMaggiorazione,MG,maggiorazione
+TipoScontoMaggiorazione,,
+RispostaSI,SI,sì
+RispostaSI,,
+TipoResa,EXW,franco fabbrica
+TipoResa,FCA,franco vettore
+TipoResa,FAS,franco lungo bordo
+TipoResa,FOB,franco a bordo
+TipoResa,CFR,costo e nolo
+TipoResa,CIF,costo assicurazione nolo
+TipoResa,CPT,trasporto pagato fino a
+TipoResa,CIP,trasporto e assicurazione pagati fino a
+TipoResa,DAT,reso al terminal
+TipoResa,DAP,reso al luogo di destinazione
+TipoResa,DDP,reso sdoganato
+TipoResa,,
+CondizioniPagamento,TP01,pagamento a rate
+CondizioniPagamento,TP02,pagamento completo
+CondizioniPagamento,TP03,anticipo
+CondizioniPagamento,,
+TipoDocumentoEsterno,OACQ,ordine acquisto
+TipoDocumentoEsterno,CNTR,contratto
+TipoDocumentoEsterno,CNVN,convenzione
+TipoDocumentoEsterno,RCZN,ricezione
+TipoDocumentoEsterno,FTCL,fattura collegata
+TipoDocumentoEsterno,,
+TipoCessionePrestazione,SC,sconto
+TipoCessionePrestazione,PR,premio
+TipoCessionePrestazione,AB,abbuono
+TipoCessionePrestazione,AC,spesa accessoria
+TipoCessionePrestazione,,
+EsigibilitaIVA,I,IVA ad esigibilità immediata
+EsigibilitaIVA,D,IVA ad esigibilità differita
+EsigibilitaIVA,S,scissione dei pagamenti
+EsigibilitaIVA,,
+CausalePagamento,A ,prestazioni di lavoro autonomo rientranti nell'esercizio di arte o professione abituale.
+CausalePagamento,B ,"utilizzazione economica, da parte dell'autore o dell'inventore, di opere dell'ingegno, di brevetti industriali e di processi, formule o informazioni relativi a esperienze acquisite in campo industriale, commerciale o scientifico."
+CausalePagamento,C ,"utili derivanti da contratti di associazione in partecipazione e da contratti di cointeressenza, quando l'apporto è costituito esclusivamente dalla prestazione di lavoro."
+CausalePagamento,D ,utili spettanti ai soci promotori e ai soci fondatori delle società di capitali.
+CausalePagamento,E ,levata di protesti cambiari da parte dei segretari comunali.
+CausalePagamento,G ,indennità corrisposte per la cessazione di attività sportiva professionale.
+CausalePagamento,H ,"indennità corrisposte per la cessazione dei rapporti di agenzia delle persone fisiche e delle società di persone, con esclusione delle somme maturate entro il 31.12.2003, già imputate per competenza e tassate come reddito d'impresa."
+CausalePagamento,I ,indennità corrisposte per la cessazione da funzioni notarili.
+CausalePagamento,L ,"utilizzazione economica, da parte di soggetto diverso dall'autore o dall'inventore, di opere dell'ingegno, di brevetti industriali e di processi, formule e informazioni relative a esperienze acquisite in campo industriale, commerciale o scientifico."
+CausalePagamento,M ,"prestazioni di lavoro autonomo non esercitate abitualmente, obblighi di fare, di non fare o permettere."
+CausalePagamento,N ,"indennità di trasferta, rimborso forfetario di spese, premi e compensi erogati: .. nell'esercizio diretto di attività sportive dilettantistiche"
+CausalePagamento,O ,"prestazioni di lavoro autonomo non esercitate abitualmente, obblighi di fare, di non fare o permettere, per le quali non sussiste l'obbligo di iscrizione alla gestione separata (Circ. Inps 104/2001)."
+CausalePagamento,P ,"compensi corrisposti a soggetti non residenti privi di stabile organizzazione per l'uso o la concessione in uso di attrezzature industriali, commerciali o scientifiche che si trovano nel territorio dello"
+CausalePagamento,Q ,provvigioni corrisposte ad agente o rappresentante di commercio monomandatario.
+CausalePagamento,R ,provvigioni corrisposte ad agente o rappresentante di commercio plurimandatario.
+CausalePagamento,S ,provvigioni corrisposte a commissionario.
+CausalePagamento,T ,provvigioni corrisposte a mediatore.
+CausalePagamento,U ,provvigioni corrisposte a procacciatore di affari.
+CausalePagamento,V ,"provvigioni corrisposte a incaricato per le vendite a domicilio e provvigioni corrisposte a incaricato per la vendita porta a porta e per la vendita ambulante di giornali quotidiani e periodici (L. 25.02.1987, n. 67)."
+CausalePagamento,W ,corrispettivi erogati nel 2013 per prestazioni relative a contratti d'appalto cui si sono resi applicabili le disposizioni contenute nell'art. 25-ter D.P.R. 600/1973.
+CausalePagamento,X ,"canoni corrisposti nel 2004 da società o enti residenti, ovvero da stabili organizzazioni di società estere di cui all'art. 26-quater, c. 1, lett. a) e b) D.P.R. 600/1973, a società o stabili organizzazioni di società, situate in altro Stato membro dell'Unione Europea in presenza dei relativi requisiti richiesti, per i quali è stato effettuato nel 2006 il rimborso della ritenuta ai sensi dell'art. 4 D. Lgs. 143/2005."
+CausalePagamento,Y ,canoni corrisposti dal 1.01.2005 al 26.07.2005 da soggetti di cui al punto precedente.
+CausalePagamento,Z ,titolo diverso dai precedenti.
+CausalePagamento,,

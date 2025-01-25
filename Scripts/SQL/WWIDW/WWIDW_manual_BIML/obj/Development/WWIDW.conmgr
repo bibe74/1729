@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WWIDW"
+  DTS:DTSID="{3B39533B-D2F0-4791-977B-EBEBD5593A01}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="data source=localhost\SQL2017;initial catalog=WWIDW_manual;integrated security=SSPI;provider=SQLNCLI11.1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

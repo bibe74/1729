@@ -1,0 +1,1554 @@
+﻿<Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>LogCarburanteZafira</ID>
+  <Name>LogCarburanteZafira</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <LastUpdate>0001-01-01T00:00:00Z</LastUpdate>
+  <DataSourceImpersonationInfo>
+    <ImpersonationMode>Default</ImpersonationMode>
+    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+  </DataSourceImpersonationInfo>
+  <Dimensions>
+    <Dimension>
+      <ID>Tipo Carburante</ID>
+      <Name>Tipo Carburante</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4358" scrolltop="-7077" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12197" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="TipoCarburante" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3440" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c0000700d0000fe080000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_TipoCarburante" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-4358</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-7077</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>LogCarburanteZafira</DataSourceViewID>
+      </Source>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>ID Tipo Carburante</ID>
+          <Name>ID Tipo Carburante</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_TipoCarburante</TableID>
+                <ColumnID>IDTipoCarburante</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Tipo Carburante</AttributeID>
+              <Name>Tipo Carburante</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>ID Unita Di Misura</AttributeID>
+              <Name>ID Unita Di Misura</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Tipo Carburante</ID>
+          <Name>Tipo Carburante</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>10</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_TipoCarburante</TableID>
+                <ColumnID>TipoCarburante</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>ID Unita Di Misura</ID>
+          <Name>ID Unita Di Misura</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>2</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_TipoCarburante</TableID>
+                <ColumnID>IDUnitaDiMisura</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Distributore</ID>
+      <Name>Distributore</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4578" scrolltop="-5807" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12197" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Distributore" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c0000b80b0000ea120000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_Distributore" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-4578</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-5807</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>LogCarburanteZafira</DataSourceViewID>
+      </Source>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>ID Distributore</ID>
+          <Name>ID Distributore</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>IDDistributore</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Distributore</AttributeID>
+              <Name>Distributore</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Localita</AttributeID>
+              <Name>Localita</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Provincia</AttributeID>
+              <Name>Provincia</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Regione</AttributeID>
+              <Name>Regione</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Nazione</AttributeID>
+              <Name>Nazione</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Is Autostrada</AttributeID>
+              <Name>Is Autostrada</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Autostrada</AttributeID>
+              <Name>Autostrada</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Area Servizio</AttributeID>
+              <Name>Area Servizio</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Distributore</ID>
+          <Name>Distributore</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>40</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>Distributore</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Localita</ID>
+          <Name>Localita</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>40</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>Localita</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Provincia</ID>
+          <Name>Provincia</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>2</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>Provincia</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Regione</ID>
+          <Name>Regione</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>20</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>Regione</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Nazione</ID>
+          <Name>Nazione</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>20</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>Nazione</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Is Autostrada</ID>
+          <Name>Is Autostrada</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Boolean</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>IsAutostrada</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Autostrada</ID>
+          <Name>Autostrada</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>10</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>Autostrada</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Area Servizio</ID>
+          <Name>Area Servizio</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>40</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_Distributore</TableID>
+                <ColumnID>AreaServizio</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <ID>Hierarchy</ID>
+          <Name>Nazione - Regione - Provincia</Name>
+          <Levels>
+            <Level>
+              <ID>Nazione</ID>
+              <Name>Nazione</Name>
+              <SourceAttributeID>Nazione</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Regione</ID>
+              <Name>Regione</Name>
+              <SourceAttributeID>Regione</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Provincia</ID>
+              <Name>Provincia</Name>
+              <SourceAttributeID>Provincia</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Localita</ID>
+              <Name>Localita</Name>
+              <SourceAttributeID>Localita</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+      </Hierarchies>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Data</ID>
+      <Name>Data</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4014" scrolltop="-5728" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12197" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimData" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4128" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c00002010000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_DimData" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-4014</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-5728</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>LogCarburanteZafira</DataSourceViewID>
+      </Source>
+      <Type>Time</Type>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>PK Data</ID>
+          <Name>PK Data</Name>
+          <Type>Date</Type>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Date</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimData</TableID>
+                <ColumnID>PKData</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <DataSize>10</DataSize>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimData</TableID>
+              <ColumnID>DataDescrizione</ColumnID>
+            </Source>
+          </NameColumn>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Data</AttributeID>
+              <Name>Data</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Data Estesa</AttributeID>
+              <Name>Data Estesa</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Anno</AttributeID>
+              <Name>Anno</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Mese</AttributeID>
+              <Name>Mese</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Mese Anno</AttributeID>
+              <Name>Mese Anno</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Data</ID>
+          <Name>Data</Name>
+          <Type>Date</Type>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Date</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimData</TableID>
+                <ColumnID>Data</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <DataSize>10</DataSize>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimData</TableID>
+              <ColumnID>DataDescrizione</ColumnID>
+            </Source>
+          </NameColumn>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Data Estesa</ID>
+          <Name>Data Estesa</Name>
+          <Type>Date</Type>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Date</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimData</TableID>
+                <ColumnID>DataEstesa</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <DataSize>27</DataSize>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimData</TableID>
+              <ColumnID>DataEstesaDescrizione</ColumnID>
+            </Source>
+          </NameColumn>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Anno</ID>
+          <Name>Anno</Name>
+          <Type>Years</Type>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimData</TableID>
+                <ColumnID>Anno</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimData</TableID>
+              <ColumnID>AnnoDescrizione</ColumnID>
+            </Source>
+          </NameColumn>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Mese</ID>
+          <Name>Mese</Name>
+          <Type>MonthOfYear</Type>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimData</TableID>
+                <ColumnID>Mese</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <DataSize>9</DataSize>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimData</TableID>
+              <ColumnID>MeseDescrizione</ColumnID>
+            </Source>
+          </NameColumn>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Mese Anno</ID>
+          <Name>Mese Anno</Name>
+          <Type>Months</Type>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimData</TableID>
+                <ColumnID>MeseAnno</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <DataSize>14</DataSize>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimData</TableID>
+              <ColumnID>MeseAnnoDescrizione</ColumnID>
+            </Source>
+          </NameColumn>
+          <OrderBy>Key</OrderBy>
+          <MembersWithData>NonLeafDataHidden</MembersWithData>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <ID>Hierarchy</ID>
+          <Name>Anno - Mese Anno</Name>
+          <Levels>
+            <Level>
+              <ID>Anno</ID>
+              <Name>Anno</Name>
+              <SourceAttributeID>Anno</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Mese Anno</ID>
+              <Name>Mese Anno</Name>
+              <SourceAttributeID>Mese Anno</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Data</ID>
+              <Name>Data</Name>
+              <SourceAttributeID>Data</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+        <Hierarchy>
+          <ID>Hierarchy 1</ID>
+          <Name>Anno - Mese</Name>
+          <Levels>
+            <Level>
+              <ID>Anno</ID>
+              <Name>Anno</Name>
+              <SourceAttributeID>Anno</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Mese</ID>
+              <Name>Mese</Name>
+              <SourceAttributeID>Mese</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Data</ID>
+              <Name>Data</Name>
+              <SourceAttributeID>Data</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+      </Hierarchies>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+  </Dimensions>
+  <Cubes>
+    <Cube>
+      <ID>LogCarburanteZafira</ID>
+      <Name>LogCarburanteZafira</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="11" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-13296" scrolltop="-11" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="96" x="35586" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Distributore" left="240" top="11811" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c0000b80b0000ea120000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_Distributore" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Rifornimenti" left="20" top="5416" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3440" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c0000700d00009b0f0000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_Rifornimenti" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Percorrenze" left="6204" top="4702" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3440" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c0000700d0000a50a0000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_Percorrenze" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="TipoCarburante" left="6204" top="0" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3440" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c0000700d0000fe080000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_TipoCarburante" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimData" left="5860" top="9827" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="4128" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000c00002010000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_DimData" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline" left="1341" top="9111" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_dbo_Rifornimenti_IDDistributore]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="1740" y="11811" />
+                  <point x="1740" y="9411" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline" left="3160" top="7663" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="5064" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_dbo_Rifornimenti_DataRifornimento]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="22" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="5860" y="12327" />
+                  <point x="4660" y="12327" />
+                  <point x="4660" y="7963" />
+                  <point x="3460" y="7963" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline" left="3160" top="752" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3344" height="5861" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_dbo_Rifornimenti_IDTipoCarburante]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="2" sourceattachpoint="12" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="6204" y="1151" />
+                  <point x="4832" y="1151" />
+                  <point x="4832" y="6313" />
+                  <point x="3460" y="6313" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline" left="7525" top="7127" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_dbo_Percorrenze_DataPercorrenza]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="3" sourceattachpoint="6" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="7924" y="9827" />
+                  <point x="7924" y="7427" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline" left="7525" top="1803" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_dbo_Percorrenze_IDTipoCarburante]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="7924" y="2302" />
+                  <point x="7924" y="4702" />
+                </connector>
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-13296</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-11</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>96</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Dimensions>
+        <Dimension>
+          <ID>Data</ID>
+          <Name>Data</Name>
+          <DimensionID>Data</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>PK Data</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Data</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Data Estesa</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Anno</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Mese</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Mese Anno</AttributeID>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <HierarchyID>Hierarchy</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Hierarchy 1</HierarchyID>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Distributore</ID>
+          <Name>Distributore</Name>
+          <DimensionID>Distributore</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>ID Distributore</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Distributore</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Localita</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Provincia</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Regione</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Nazione</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Is Autostrada</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Autostrada</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Area Servizio</AttributeID>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <HierarchyID>Hierarchy</HierarchyID>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Tipo Carburante</ID>
+          <Name>Tipo Carburante</Name>
+          <DimensionID>Tipo Carburante</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>ID Tipo Carburante</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Tipo Carburante</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>ID Unita Di Misura</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <MeasureGroups>
+        <MeasureGroup>
+          <ID>Percorrenze</ID>
+          <Name>Percorrenze</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>Qta Km</ID>
+              <Name>Qta Km</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_Percorrenze</TableID>
+                  <ColumnID>QtaKm</ColumnID>
+                </Source>
+              </Source>
+              <FormatString>#,###</FormatString>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Tipo Carburante</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Tipo Carburante</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>WChar</DataType>
+                      <DataSize>1</DataSize>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dbo_Percorrenze</TableID>
+                        <ColumnID>IDTipoCarburante</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>PK Data</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Date</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dbo_Percorrenze</TableID>
+                        <ColumnID>DataPercorrenza</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Percorrenze</ID>
+              <Name>Percorrenze</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>LogCarburanteZafira</DataSourceViewID>
+                <TableID>dbo_Percorrenze</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+        <MeasureGroup>
+          <ID>Rifornimenti</ID>
+          <Name>Rifornimenti</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>Importo Euro</ID>
+              <Name>Importo Euro</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_Rifornimenti</TableID>
+                  <ColumnID>ImportoEuro</ColumnID>
+                </Source>
+              </Source>
+              <FormatString>#,##0.00;-#,##0.00</FormatString>
+            </Measure>
+            <Measure>
+              <ID>Qta Carburante</ID>
+              <Name>Qta Carburante</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_Rifornimenti</TableID>
+                  <ColumnID>QtaCarburante</ColumnID>
+                </Source>
+              </Source>
+              <FormatString>#,##0.000;-#,##0.000</FormatString>
+            </Measure>
+            <Measure>
+              <ID>NumeroRifornimenti</ID>
+              <Name>NumeroRifornimenti</Name>
+              <AggregateFunction>Count</AggregateFunction>
+              <Source>
+                <DataType>Integer</DataType>
+                <DataSize>4</DataSize>
+                <Source xsi:type="RowBinding">
+                  <TableID>dbo_Rifornimenti</TableID>
+                </Source>
+              </Source>
+              <FormatString>#,###</FormatString>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Distributore</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Distributore</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dbo_Rifornimenti</TableID>
+                        <ColumnID>IDDistributore</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Tipo Carburante</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Tipo Carburante</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>WChar</DataType>
+                      <DataSize>1</DataSize>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dbo_Rifornimenti</TableID>
+                        <ColumnID>IDTipoCarburante</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>PK Data</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Date</DataType>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dbo_Rifornimenti</TableID>
+                        <ColumnID>DataRifornimento</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Rifornimenti</ID>
+              <Name>Rifornimenti</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>LogCarburanteZafira</DataSourceViewID>
+                <TableID>dbo_Rifornimenti</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+      </MeasureGroups>
+      <Source>
+        <DataSourceViewID>LogCarburanteZafira</DataSourceViewID>
+      </Source>
+    </Cube>
+  </Cubes>
+  <DataSources>
+    <DataSource xsi:type="RelationalDataSource">
+      <ID>Expenses</ID>
+      <Name>Expenses</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <ConnectionString>Provider=SQLNCLI11.1;Data Source=.\SQL2017;Integrated Security=SSPI;Initial Catalog=Expenses</ConnectionString>
+      <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
+      <ImpersonationInfo>
+        <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
+        <Account>METRA\bs_turelli</Account>
+        <ImpersonationInfoSecurity>PasswordRemoved</ImpersonationInfoSecurity>
+      </ImpersonationInfo>
+      <Timeout>PT0S</Timeout>
+    </DataSource>
+  </DataSources>
+  <DataSourceViews>
+    <DataSourceView>
+      <ID>LogCarburanteZafira</ID>
+      <Name>LogCarburanteZafira</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+          <Value>_ALL_TABLES_</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+          <Value></Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+          <Value>
+            <Layouts xmlns="">
+              <Diagram>
+                <Name>_ALL_TABLES_</Name>
+                <DiagramLayout />
+                <ShowRelationshipNames>False</ShowRelationshipNames>
+                <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                <DiagramViewPortLeft>0</DiagramViewPortLeft>
+                <DiagramViewPortTop>0</DiagramViewPortTop>
+                <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                <DiagramBoundingTop>0</DiagramBoundingTop>
+                <DiagramZoom>100</DiagramZoom>
+              </Diagram>
+            </Layouts>
+          </Value>
+        </Annotation>
+      </Annotations>
+      <DataSourceID>Expenses</DataSourceID>
+      <Schema>
+        <xs:schema id="LogCarburanteZafira" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+          <xs:element name="LogCarburanteZafira" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="65bd4f7c-5088-4a4e-bc3d-e76da7162b56">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="dbo_DimData" msprop:design-time-name="65babad6-f723-41f1-84a9-001657a86292" msprop:FriendlyName="DimData" msprop:DbSchemaName="dbo" msprop:DbTableName="DimData" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="PKData" msprop:design-time-name="37ef30b1-8ce8-48f8-9ab5-c94192f11b38" msprop:DbColumnName="PKData" msprop:FriendlyName="PKData" type="xs:dateTime" />
+                      <xs:element name="Data" msprop:design-time-name="51510f7e-a0ee-42ff-9b84-65aeaac52c8a" msprop:DbColumnName="Data" msprop:FriendlyName="Data" type="xs:dateTime" />
+                      <xs:element name="DataDescrizione" msprop:design-time-name="4f307d2c-c845-4fae-8e43-04426f0fc4fa" msprop:DbColumnName="DataDescrizione" msprop:FriendlyName="DataDescrizione">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="10" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="DataEstesa" msprop:design-time-name="67ce1edf-7aef-403d-8a6b-2a4296585b8b" msprop:DbColumnName="DataEstesa" msprop:FriendlyName="DataEstesa" type="xs:dateTime" />
+                      <xs:element name="DataEstesaDescrizione" msprop:design-time-name="08363838-ffbe-4f3b-af31-4600cc5bf23e" msprop:DbColumnName="DataEstesaDescrizione" msprop:FriendlyName="DataEstesaDescrizione">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="27" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Anno" msprop:design-time-name="8101df19-c35c-421d-ba8a-cd939e3d497c" msprop:DbColumnName="Anno" msprop:FriendlyName="Anno" type="xs:int" />
+                      <xs:element name="AnnoDescrizione" msprop:design-time-name="e7743871-c8ad-4076-9664-4cdeb341075f" msprop:DbColumnName="AnnoDescrizione" msprop:FriendlyName="AnnoDescrizione">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="4" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Mese" msprop:design-time-name="2ad7cc69-76cd-4f46-a5fa-6f5b7f2ad70c" msprop:DbColumnName="Mese" msprop:FriendlyName="Mese" type="xs:int" />
+                      <xs:element name="MeseDescrizione" msprop:design-time-name="3af57c89-431d-438c-ab65-eef9367df592" msprop:DbColumnName="MeseDescrizione" msprop:FriendlyName="MeseDescrizione">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="9" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="MeseAnno" msprop:design-time-name="d7e2072b-71f9-4bf4-ae04-2b1ba9190075" msprop:DbColumnName="MeseAnno" msprop:FriendlyName="MeseAnno" type="xs:int" />
+                      <xs:element name="MeseAnnoDescrizione" msprop:design-time-name="21b23798-e85b-4dcc-874c-e2dce0a431b9" msprop:DbColumnName="MeseAnnoDescrizione" msprop:FriendlyName="MeseAnnoDescrizione">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="14" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="DataNumerica" msprop:design-time-name="90addef0-7100-4f2a-bb37-1c8de6d7caaa" msprop:DbColumnName="DataNumerica" msprop:FriendlyName="DataNumerica" type="xs:int" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dbo_Distributore" msprop:design-time-name="b196f748-e03c-4319-8039-6187a62b5094" msprop:FriendlyName="Distributore" msprop:DbSchemaName="dbo" msprop:DbTableName="Distributore" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="IDDistributore" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="4dd36710-228e-4f30-9511-3114b2093af0" msprop:DbColumnName="IDDistributore" msprop:FriendlyName="IDDistributore" type="xs:int" />
+                      <xs:element name="Distributore" msprop:design-time-name="680418b0-854e-4e98-a978-b2d9bb057b90" msprop:DbColumnName="Distributore" msprop:FriendlyName="Distributore">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="40" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Localita" msprop:design-time-name="f8aa2d9e-4701-4b6f-88b8-a3a7254c0eca" msprop:DbColumnName="Localita" msprop:FriendlyName="Localita" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="40" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Provincia" msprop:design-time-name="b29ea5ff-2756-47de-aa75-bd054ee6e6a4" msprop:DbColumnName="Provincia" msprop:FriendlyName="Provincia" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="2" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Regione" msprop:design-time-name="5c7a195a-61bc-4d4e-b9d2-60094ee85c4f" msprop:DbColumnName="Regione" msprop:FriendlyName="Regione" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="20" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Nazione" msprop:design-time-name="90784f83-76e4-4544-8844-8a4000b82b8e" msprop:DbColumnName="Nazione" msprop:FriendlyName="Nazione" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="20" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="IsAutostrada" msprop:design-time-name="a5731a85-ff0c-452c-a3f1-b90e6546093b" msprop:DbColumnName="IsAutostrada" msprop:FriendlyName="IsAutostrada" type="xs:boolean" />
+                      <xs:element name="Autostrada" msprop:design-time-name="8635557a-8ecc-4cc5-9261-7d6c08e0e8ab" msprop:DbColumnName="Autostrada" msprop:FriendlyName="Autostrada" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="10" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="AreaServizio" msprop:design-time-name="a5082e88-035d-4829-b5e6-5fc4fe540c37" msprop:DbColumnName="AreaServizio" msprop:FriendlyName="AreaServizio" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="40" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dbo_Percorrenze" msprop:design-time-name="096ed282-4ac7-4d76-9751-4c14a1c52841" msprop:FriendlyName="Percorrenze" msprop:DbSchemaName="dbo" msprop:DbTableName="Percorrenze" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="IDPercorrenza" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="21973cd3-d63b-468e-bfff-33ab705dbe30" msprop:DbColumnName="IDPercorrenza" msprop:FriendlyName="IDPercorrenza" type="xs:int" />
+                      <xs:element name="DataPercorrenza" msprop:design-time-name="132d4b86-a46f-4096-9a2c-3cfe34a57aaa" msprop:DbColumnName="DataPercorrenza" msprop:FriendlyName="DataPercorrenza" type="xs:dateTime" />
+                      <xs:element name="IDTipoCarburante" msprop:design-time-name="4776d3b5-3089-4a01-b89b-9f5915ed63e8" msprop:DbColumnName="IDTipoCarburante" msprop:FriendlyName="IDTipoCarburante">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="1" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="QtaKm" msprop:design-time-name="2c439349-cd52-4ee4-a938-4ef4a15cc772" msprop:DbColumnName="QtaKm" msprop:FriendlyName="QtaKm" type="xs:int" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dbo_Rifornimenti" msprop:design-time-name="6d504ea7-998a-4d7e-ad8e-8ecb9f114c94" msprop:FriendlyName="Rifornimenti" msprop:DbSchemaName="dbo" msprop:DbTableName="Rifornimenti" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="IDRifornimento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8330a2ea-7457-4b41-aaaa-f5e9e7232703" msprop:DbColumnName="IDRifornimento" msprop:FriendlyName="IDRifornimento" type="xs:int" />
+                      <xs:element name="DataRifornimento" msprop:design-time-name="d14bf73b-1961-41c7-8337-8e7b75d1b180" msprop:DbColumnName="DataRifornimento" msprop:FriendlyName="DataRifornimento" type="xs:dateTime" />
+                      <xs:element name="IDDistributore" msprop:design-time-name="ba07cdad-1d3b-45dd-a291-6bcc45c3dc2e" msprop:DbColumnName="IDDistributore" msprop:FriendlyName="IDDistributore" type="xs:int" />
+                      <xs:element name="IDTipoCarburante" msprop:design-time-name="44b6b35c-4f80-498d-8aad-a006b62877d1" msprop:DbColumnName="IDTipoCarburante" msprop:FriendlyName="IDTipoCarburante">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="1" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="ImportoEuro" msprop:design-time-name="d5e2ac38-557e-448a-ae30-27a6fe60f4d3" msprop:DbColumnName="ImportoEuro" msprop:FriendlyName="ImportoEuro" type="xs:decimal" />
+                      <xs:element name="PrezzoUnitario" msprop:design-time-name="9418dc35-ec0d-4782-b295-05a5b16ad175" msprop:DbColumnName="PrezzoUnitario" msprop:FriendlyName="PrezzoUnitario" type="xs:decimal" />
+                      <xs:element name="QtaCarburante" msprop:design-time-name="5ed1c0f5-bd4f-4234-84b7-4a2499a25f54" msprop:DbColumnName="QtaCarburante" msprop:FriendlyName="QtaCarburante" type="xs:decimal" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dbo_TipoCarburante" msprop:design-time-name="4366b071-cd96-4a5b-adf1-ec1818ba715f" msprop:FriendlyName="TipoCarburante" msprop:DbSchemaName="dbo" msprop:DbTableName="TipoCarburante" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="IDTipoCarburante" msprop:design-time-name="c9edd988-a289-4c12-9290-887dcb8c6fe2" msprop:DbColumnName="IDTipoCarburante" msprop:FriendlyName="IDTipoCarburante">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="1" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="TipoCarburante" msprop:design-time-name="3023f61f-f764-480e-ba61-d47e971a35a4" msprop:DbColumnName="TipoCarburante" msprop:FriendlyName="TipoCarburante">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="10" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="IDUnitaDiMisura" msprop:design-time-name="85217251-077f-4cb9-986e-1de943db5237" msprop:DbColumnName="IDUnitaDiMisura" msprop:FriendlyName="IDUnitaDiMisura">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="2" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+            <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_DimData" />
+              <xs:field xpath="PKData" />
+            </xs:unique>
+            <xs:unique name="dbo_Distributore_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_Distributore" />
+              <xs:field xpath="IDDistributore" />
+            </xs:unique>
+            <xs:unique name="dbo_Percorrenze_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_Percorrenze" />
+              <xs:field xpath="IDPercorrenza" />
+            </xs:unique>
+            <xs:unique name="dbo_Rifornimenti_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_Rifornimenti" />
+              <xs:field xpath="IDRifornimento" />
+            </xs:unique>
+            <xs:unique name="dbo_TipoCarburante_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dbo_TipoCarburante" />
+              <xs:field xpath="IDTipoCarburante" />
+            </xs:unique>
+            <xs:keyref name="FK_dbo_Rifornimenti_IDTipoCarburante" refer="dbo_TipoCarburante_Constraint1">
+              <xs:selector xpath=".//dbo_Rifornimenti" />
+              <xs:field xpath="IDTipoCarburante" />
+            </xs:keyref>
+            <xs:keyref name="FK_dbo_Rifornimenti_DataRifornimento" refer="Constraint1">
+              <xs:selector xpath=".//dbo_Rifornimenti" />
+              <xs:field xpath="DataRifornimento" />
+            </xs:keyref>
+            <xs:keyref name="FK_dbo_Rifornimenti_IDDistributore" refer="dbo_Distributore_Constraint1">
+              <xs:selector xpath=".//dbo_Rifornimenti" />
+              <xs:field xpath="IDDistributore" />
+            </xs:keyref>
+            <xs:keyref name="FK_dbo_Percorrenze_IDTipoCarburante" refer="dbo_TipoCarburante_Constraint1">
+              <xs:selector xpath=".//dbo_Percorrenze" />
+              <xs:field xpath="IDTipoCarburante" />
+            </xs:keyref>
+            <xs:keyref name="FK_dbo_Percorrenze_DataPercorrenza" refer="Constraint1">
+              <xs:selector xpath=".//dbo_Percorrenze" />
+              <xs:field xpath="DataPercorrenza" />
+            </xs:keyref>
+          </xs:element>
+        </xs:schema>
+        <LogCarburanteZafira xmlns="" />
+      </Schema>
+    </DataSourceView>
+  </DataSourceViews>
+</Database>

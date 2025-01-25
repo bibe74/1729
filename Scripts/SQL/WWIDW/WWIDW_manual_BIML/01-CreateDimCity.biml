@@ -1,0 +1,37 @@
+<#@ template language="C#" hostspecific="true" #>
+<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+<#@ include file="ProjectConnections.biml" #>
+
+	<!--
+	<#
+	string PackageName  = "01-LoadDimCity";
+	string DstSchemaName = "Dim";
+	string DstTableName = "City";
+	string DstConnection = "WWIDW";
+	string DataFlowSourceName = "OLE_SRC StgDimCity";
+	string SrcConnection = "WWIDW";
+	string SourceQuery = @"SELECT * FROM Dim.CityView";
+	string UpdateSchemaName = "Updt";
+	string UpdateTableName = "UpdtCity";
+	string UpdateConnection = "WWIDW";
+	string UpdateSQLStatement = @"UPDATE d 
+					SET 
+					d.CityName = u.CityName,
+					d.StateProvinceCode = u.StateProvinceCode,
+					d.StateProvinceName = u.StateProvinceName,
+					d.CountryName = u.CountryName,
+					d.Region = u.Region,
+					d.Subregion = u.Subregion,
+					d.changehashkey = u.changehashkey 
+					FROM Updt.UpdtCity u 
+					INNER JOIN Dim.City d ON u.HistoricalHashKey = d.HistoricalHashKey;";
+	#>
+	-->
+	
+    <Packages>
+        <#=CallBimlScript("Dim1.biml", PackageName, DstSchemaName, DstTableName, DstConnection,
+        DataFlowSourceName, SrcConnection, SourceQuery, UpdateSchemaName, UpdateTableName, 
+        UpdateConnection, UpdateSQLStatement)#>
+    </Packages>
+	
+</Biml>

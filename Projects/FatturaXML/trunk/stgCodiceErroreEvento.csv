@@ -1,0 +1,41 @@
+PKEsitoEvento,CodiceErrore,DescrizioneErrore
+-1,,
+0,,Nessun errore
+1,,Errore generico
+101,,Errore generico in fase di importazione codice fattura da gestionale
+103,,Eccezione in fase di inserimento XMLAudit.Landing_Fattura
+201,,Errore generico in fase di importazione dati fattura da gestionale
+203,,Eccezione in fase di inserimento testata fattura
+211,,Eccezione in fase di inserimento XMLFatture.Staging_FatturaElettronicaHeader
+212,,Eccezione in fase di inserimento XMLFatture.Staging_FatturaElettronicaBody*
+301,,Errore generico in fase di convalida dati importati
+303,,Eccezione in fase di inserimento righe fattura
+304,,Fattura %CODICEFATTURA% non ancora trasmessa
+305,,Revisione mancante per la fattura %CODICEFATTURA%
+306,,Revisione #%PKStaging_FatturaElettronicaHeader% errata per la fattura %CODICEFATTURA%
+307,,Errore in fase di validazione campo SDI: parametro @TipoValore non valido
+311,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaHeader
+312,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody*
+313,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody
+314,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DatiCassaPrevidenziale
+315,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_ScontoMaggiorazione
+316,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_Causale
+317,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DocumentoEsterno
+318,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DocumentoEsterno_RiferimentoNumeroLinea
+319,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DocumentoEsterno*
+320,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DatiSAL
+321,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DatiDDT
+322,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DatiDDT_RiferimentoNumeroLinea
+323,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DettaglioLinee
+324,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DettaglioLinee_CodiceArticolo
+325,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DettaglioLinee_ScontoMaggiorazione
+326,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DettaglioLinee_AltriDatiGestionali
+327,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DatiRiepilogo
+328,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DatiPagamento
+329,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_DatiPagamento_DettaglioPagamento
+330,,Eccezione in fase di inserimento XMLFatture.FatturaElettronicaBody_Allegati
+350,,Errore generico in fase di esportazione fattura
+401,,Errore generico in fase di generazione file XML
+901,,Errore generico in fase di procedura interna
+902,,Valorizzare almeno uno dei parametri @codiceNumerico e @codiceAlfanumerico
+903,,Fattura %CODICEFATTURA% già convalidata

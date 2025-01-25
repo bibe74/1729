@@ -1,0 +1,97 @@
+IDCampo,CodiceErrore,DescrizioneErrore
+1.1.1.2,300,00300: 1.1.1.2 <IdCodice> non valido
+1.1.3,428,00428: 1.1.3 <FormatoTrasmissione> con valore diverso da “FPA12” e “FPR12”
+1.1.3,427,00427: 1.1.4 <CodiceDestinatario> di 7 caratteri a fronte di 1.1.3 <FormatoTrasmissione> con valore “FPA12” o 1.1.4 <CodiceDestinatario> di 6 caratteri a fronte di 1.1.3 <FormatoTrasmissione> con valore “FPR12”
+1.1.4,311,00311: 1.1.4 <CodiceDestinatario> non valido
+1.1.4,312,00312: 1.1.4 <CodiceDestinatario> non attivo
+1.1.4,427,00427: 1.1.4 <CodiceDestinatario> di 7 caratteri a fronte di 1.1.3 <FormatoTrasmissione> con valore “FPA12” o 1.1.4 <CodiceDestinatario> di 6 caratteri a fronte di 1.1.3 <FormatoTrasmissione> con valore “FPR12”
+1.1.4,398,"00398: Codice Ufficio presente ed univocamente identificabile nell’anagrafica IPA di riferimento, in presenza di 1.1.4 <CodiceDestinatario> valorizzato con codice ufficio “Centrale”"
+1.1.4,399,00399: CodiceFiscale del CessionarioCommittente presente nell’anagrafica IPA di riferimento in presenza di 1.1.4 <CodiceDestinatario> valorizzato  a “999999”
+1.1.6,426,"00426: 1.1.6 <PECDestinatario> non valorizzato a fronte di 1.1.4 <CodiceDestinatario> con valore 0000000, o 1.1.6 <PECDestinatario> valorizzato a fronte di 1.1.4 <Codice Destinatario> con valore diverso da 0000000"
+1.2.1.1.2,301,00301: 1.2.1.1.2 <IdCodice> non valido
+1.2.1.2,302,00302: 1.2.1.2 <CodiceFiscale> non valido
+1.2.1.3.1,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non sono valorizzati i campi <Nome> e <Cognome> seguenti
+- è valorizzato ma lo sono pure i campi <Nome> e/o <Cognome> seguenti)"
+1.2.1.3.2,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.2.1.3.3,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.3.1.1.2,303,00303: 1.3.1.1.2 <IdCodice> o 1.4.4.1.2 <IdCodice> non valido
+1.3.1.2,304,00304: 1.3.1.2 <CodiceFiscale> non valido
+1.3.1.3.1,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non sono valorizzati i campi <Nome> e <Cognome> seguenti
+- è valorizzato ma lo sono pure i campi <Nome> e/o <Cognome> seguenti)"
+1.3.1.3.2,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.3.1.3.3,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.4.1.1,417,00417: 1.4.1.1 <IdFiscaleIVA> e 1.4.1.2 <CodiceFiscale> non valorizzati (almeno uno dei due deve essere valorizzato)
+1.4.1.1.2,305,00305: 1.4.1.1.2 <IdCodice> non valido
+1.4.1.2,417,00417: 1.4.1.1 <IdFiscaleIVA> e 1.4.1.2 <CodiceFiscale> non valorizzati (almeno uno dei due deve essere valorizzato)
+1.4.1.2,306,00306: 1.4.1.2 <CodiceFiscale> non valido
+1.4.1.3.1,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non sono valorizzati i campi <Nome> e <Cognome> seguenti
+- è valorizzato ma lo sono pure i campi <Nome> e/o <Cognome> seguenti)"
+1.4.1.3.2,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.4.1.3.3,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.4.4.1.2,303,00303: 1.3.1.1.2 <IdCodice> o 1.4.4.1.2 <IdCodice> non valido
+1.4.4.2,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non sono valorizzati i campi <Nome> e <Cognome> seguenti
+- è valorizzato ma lo sono pure i campi <Nome> e/o <Cognome> seguenti)"
+1.4.4.3,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.4.4.4,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.5.1.3.1,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non sono valorizzati i campi <Nome> e <Cognome> seguenti
+- è valorizzato ma lo sono pure i campi <Nome> e/o <Cognome> seguenti)"
+1.5.1.3.2,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+1.5.1.3.3,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+2.1.1.3,403,00403: 2.1.1.3 <Data> successiva alla data di ricezione
+2.1.1.3,418,00418: 2.1.1.3 <Data> antecedente a 2.1.6.3 <Data>
+2.1.1.4,425,00425: 2.1.1.4 <Numero> non contenente caratteri numerici
+2.1.1.5,411,00411: 2.1.1.5 <DatiRitenuta> non presente a fronte di almeno un blocco 2.2.1 <DettaglioLinee> con 2.2.1.13 <Ritenuta> uguale a SI
+2.1.1.5,415,00415:  2.1.1.5 <DatiRitenuta> non presente a fronte di 2.1.1.7.6 <Ritenuta> uguale a SI
+2.1.1.7.5,424,00424:  2.2.1.12 <AliquotaIVA> o 2.2.2.1< AliquotaIVA> o 2.1.1.7.5 <AliquotaIVA> non indicata in termini percentuali
+2.1.1.7.6,415,00415:  2.1.1.5 <DatiRitenuta> non presente a fronte di 2.1.1.7.6 <Ritenuta> uguale a SI
+2.1.1.7.7,413,00413:  2.1.1.7.7 <Natura> non presente a fronte di 2.1.1.7.5 <AliquotaIVA> pari a zero
+2.1.1.7.7,414,00414: 2.1.1.7.7 <Natura> presente a fronte di 2.1.1.7.5 <Aliquota IVA> diversa da zero
+2.1.1.8.1,437,00437:  2.1.1.8.2 <Percentuale>  e  2.1.1.8.3 <Importo> non presenti a fronte di 2.1.1.8.1 <Tipo> valorizzato
+2.1.9.1.3.1,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non sono valorizzati i campi <Nome> e <Cognome> seguenti
+- è valorizzato ma lo sono pure i campi <Nome> e/o <Cognome> seguenti)"
+2.1.9.1.3.2,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+2.1.9.1.3.3,200,"00200: file non conforme al formato (l'errore viene rilevato nei casi in cui:
+- non è valorizzato e non è valorizzato il campo <Denominazione> precedente
+- è valorizzato ma lo è pure il campo <Denominazione> precedente"
+2.2.1.10.1,438,00438:  2.2.1.10.2 <Percentuale>  e  2.2.1.10.3 <Importo> non presenti a fronte di 2.2.1.10.1 <Tipo> valorizzato
+2.2.1.11,423,00423: 2.2.1.11 <PrezzoTotale> non calcolato secondo le regole definite nelle specifiche tecniche
+2.2.1.12,424,00424: 2.2.1.12 <AliquotaIVA> o 2.2.2.1< AliquotaIVA> o 2.1.1.7.5 <AliquotaIVA> non indicata in termini percentuali
+2.2.1.13,411,00411:  2.1.1.5 <DatiRitenuta> non presente a fronte di almeno un blocco 2.2.1 <DettaglioLinee> con 2.2.1.13 <Ritenuta> uguale a SI
+2.2.1.14,400,00400: 2.2.1.14 < Natura> non presente a fronte di 2.2.1.12 <AliquotaIVA> pari a zero
+2.2.1.14,401,00401: 2.2.1.14 <Natura> presente a fronte di 2.2.1.12 <AliquotaIVA> diversa da zero
+2.2.2,419,00419: 2.2.2 <DatiRiepilogo> non presente in corrispondenza di almeno un valore di 2.1.1.7.5 <AliquotaIVA> o 2.2.1.12 <AliquotaIVA>
+2.2.2.1,424,00424: 2.2.1.12 <AliquotaIVA> o 2.2.2.1< AliquotaIVA> o 2.1.1.7.5 <AliquotaIVA> non indicata in termini percentuali
+2.2.2.2,420,00420: 2.2.2.2 <Natura> con valore N6 (inversione contabile) a fronte di 2.2.2.7 <EsigibilitaIVA> uguale a  S (scissione pagamenti)
+2.2.2.2,429,00429: 2.2.2.2 < Natura> non presente a fronte di 2.2.2.1 <AliquotaIVA> pari a zero
+2.2.2.2,430,00430: 2.2.2.2 <Natura> presente a fronte di 2.2.2.1 <AliquotaIVA> diversa da zero
+2.2.2.5,422,00422: 2.2.2.5 <ImponibileImporto> non calcolato secondo le regole definite nelle specifiche tecniche
+2.2.2.6,421,00421: 2.2.2.6 <Imposta> non calcolato secondo le regole definite nelle specifiche tecniche
+2.2.2.7,420,00420: 2.2.2.2 <Natura> con valore N6 (inversione contabile) a fronte di 2.2.2.7 <EsigibilitaIVA> uguale a  S (scissione pagamenti)

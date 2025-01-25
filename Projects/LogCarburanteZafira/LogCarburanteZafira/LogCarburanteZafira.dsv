@@ -1,0 +1,261 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="78e515a8-e14e-465d-9fab-371723d150d8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>LogCarburanteZafira</ID>
+  <Name>LogCarburanteZafira</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Expenses</DataSourceID>
+  <Schema>
+    <xs:schema id="LogCarburanteZafira" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="LogCarburanteZafira" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="65bd4f7c-5088-4a4e-bc3d-e76da7162b56">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimData" msprop:design-time-name="65babad6-f723-41f1-84a9-001657a86292" msprop:DbTableName="DimData" msprop:FriendlyName="DimData" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PKData" msprop:design-time-name="37ef30b1-8ce8-48f8-9ab5-c94192f11b38" msprop:DbColumnName="PKData" msprop:FriendlyName="PKData" type="xs:dateTime" />
+                  <xs:element name="Data" msprop:design-time-name="51510f7e-a0ee-42ff-9b84-65aeaac52c8a" msprop:DbColumnName="Data" msprop:FriendlyName="Data" type="xs:dateTime" />
+                  <xs:element name="DataDescrizione" msprop:design-time-name="4f307d2c-c845-4fae-8e43-04426f0fc4fa" msprop:DbColumnName="DataDescrizione" msprop:FriendlyName="DataDescrizione">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DataEstesa" msprop:design-time-name="67ce1edf-7aef-403d-8a6b-2a4296585b8b" msprop:DbColumnName="DataEstesa" msprop:FriendlyName="DataEstesa" type="xs:dateTime" />
+                  <xs:element name="DataEstesaDescrizione" msprop:design-time-name="08363838-ffbe-4f3b-af31-4600cc5bf23e" msprop:DbColumnName="DataEstesaDescrizione" msprop:FriendlyName="DataEstesaDescrizione">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="27" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Anno" msprop:design-time-name="8101df19-c35c-421d-ba8a-cd939e3d497c" msprop:DbColumnName="Anno" msprop:FriendlyName="Anno" type="xs:int" />
+                  <xs:element name="AnnoDescrizione" msprop:design-time-name="e7743871-c8ad-4076-9664-4cdeb341075f" msprop:DbColumnName="AnnoDescrizione" msprop:FriendlyName="AnnoDescrizione">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Mese" msprop:design-time-name="2ad7cc69-76cd-4f46-a5fa-6f5b7f2ad70c" msprop:DbColumnName="Mese" msprop:FriendlyName="Mese" type="xs:int" />
+                  <xs:element name="MeseDescrizione" msprop:design-time-name="3af57c89-431d-438c-ab65-eef9367df592" msprop:DbColumnName="MeseDescrizione" msprop:FriendlyName="MeseDescrizione">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="9" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MeseAnno" msprop:design-time-name="d7e2072b-71f9-4bf4-ae04-2b1ba9190075" msprop:DbColumnName="MeseAnno" msprop:FriendlyName="MeseAnno" type="xs:int" />
+                  <xs:element name="MeseAnnoDescrizione" msprop:design-time-name="21b23798-e85b-4dcc-874c-e2dce0a431b9" msprop:DbColumnName="MeseAnnoDescrizione" msprop:FriendlyName="MeseAnnoDescrizione">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="14" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DataNumerica" msprop:design-time-name="90addef0-7100-4f2a-bb37-1c8de6d7caaa" msprop:DbColumnName="DataNumerica" msprop:FriendlyName="DataNumerica" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Distributore" msprop:design-time-name="b196f748-e03c-4319-8039-6187a62b5094" msprop:DbTableName="Distributore" msprop:FriendlyName="Distributore" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IDDistributore" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="4dd36710-228e-4f30-9511-3114b2093af0" msprop:DbColumnName="IDDistributore" msprop:FriendlyName="IDDistributore" type="xs:int" />
+                  <xs:element name="Distributore" msprop:design-time-name="680418b0-854e-4e98-a978-b2d9bb057b90" msprop:DbColumnName="Distributore" msprop:FriendlyName="Distributore">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Localita" msprop:design-time-name="f8aa2d9e-4701-4b6f-88b8-a3a7254c0eca" msprop:DbColumnName="Localita" msprop:FriendlyName="Localita" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Provincia" msprop:design-time-name="b29ea5ff-2756-47de-aa75-bd054ee6e6a4" msprop:DbColumnName="Provincia" msprop:FriendlyName="Provincia" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Regione" msprop:design-time-name="5c7a195a-61bc-4d4e-b9d2-60094ee85c4f" msprop:DbColumnName="Regione" msprop:FriendlyName="Regione" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nazione" msprop:design-time-name="90784f83-76e4-4544-8844-8a4000b82b8e" msprop:DbColumnName="Nazione" msprop:FriendlyName="Nazione" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsAutostrada" msprop:design-time-name="a5731a85-ff0c-452c-a3f1-b90e6546093b" msprop:DbColumnName="IsAutostrada" msprop:FriendlyName="IsAutostrada" type="xs:boolean" />
+                  <xs:element name="Autostrada" msprop:design-time-name="8635557a-8ecc-4cc5-9261-7d6c08e0e8ab" msprop:DbColumnName="Autostrada" msprop:FriendlyName="Autostrada" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AreaServizio" msprop:design-time-name="a5082e88-035d-4829-b5e6-5fc4fe540c37" msprop:DbColumnName="AreaServizio" msprop:FriendlyName="AreaServizio" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Percorrenze" msprop:design-time-name="096ed282-4ac7-4d76-9751-4c14a1c52841" msprop:DbTableName="Percorrenze" msprop:FriendlyName="Percorrenze" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IDPercorrenza" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="21973cd3-d63b-468e-bfff-33ab705dbe30" msprop:DbColumnName="IDPercorrenza" msprop:FriendlyName="IDPercorrenza" type="xs:int" />
+                  <xs:element name="DataPercorrenza" msprop:design-time-name="132d4b86-a46f-4096-9a2c-3cfe34a57aaa" msprop:DbColumnName="DataPercorrenza" msprop:FriendlyName="DataPercorrenza" type="xs:dateTime" />
+                  <xs:element name="IDTipoCarburante" msprop:design-time-name="4776d3b5-3089-4a01-b89b-9f5915ed63e8" msprop:DbColumnName="IDTipoCarburante" msprop:FriendlyName="IDTipoCarburante">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="QtaKm" msprop:design-time-name="2c439349-cd52-4ee4-a938-4ef4a15cc772" msprop:DbColumnName="QtaKm" msprop:FriendlyName="QtaKm" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Rifornimenti" msprop:design-time-name="6d504ea7-998a-4d7e-ad8e-8ecb9f114c94" msprop:DbTableName="Rifornimenti" msprop:FriendlyName="Rifornimenti" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IDRifornimento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8330a2ea-7457-4b41-aaaa-f5e9e7232703" msprop:DbColumnName="IDRifornimento" msprop:FriendlyName="IDRifornimento" type="xs:int" />
+                  <xs:element name="DataRifornimento" msprop:design-time-name="d14bf73b-1961-41c7-8337-8e7b75d1b180" msprop:DbColumnName="DataRifornimento" msprop:FriendlyName="DataRifornimento" type="xs:dateTime" />
+                  <xs:element name="IDDistributore" msprop:design-time-name="ba07cdad-1d3b-45dd-a291-6bcc45c3dc2e" msprop:DbColumnName="IDDistributore" msprop:FriendlyName="IDDistributore" type="xs:int" />
+                  <xs:element name="IDTipoCarburante" msprop:design-time-name="44b6b35c-4f80-498d-8aad-a006b62877d1" msprop:DbColumnName="IDTipoCarburante" msprop:FriendlyName="IDTipoCarburante">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ImportoEuro" msprop:design-time-name="d5e2ac38-557e-448a-ae30-27a6fe60f4d3" msprop:DbColumnName="ImportoEuro" msprop:FriendlyName="ImportoEuro" type="xs:decimal" />
+                  <xs:element name="PrezzoUnitario" msprop:design-time-name="9418dc35-ec0d-4782-b295-05a5b16ad175" msprop:DbColumnName="PrezzoUnitario" msprop:FriendlyName="PrezzoUnitario" type="xs:decimal" />
+                  <xs:element name="QtaCarburante" msprop:design-time-name="5ed1c0f5-bd4f-4234-84b7-4a2499a25f54" msprop:DbColumnName="QtaCarburante" msprop:FriendlyName="QtaCarburante" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_TipoCarburante" msprop:design-time-name="4366b071-cd96-4a5b-adf1-ec1818ba715f" msprop:DbTableName="TipoCarburante" msprop:FriendlyName="TipoCarburante" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IDTipoCarburante" msprop:design-time-name="c9edd988-a289-4c12-9290-887dcb8c6fe2" msprop:DbColumnName="IDTipoCarburante" msprop:FriendlyName="IDTipoCarburante">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoCarburante" msprop:design-time-name="3023f61f-f764-480e-ba61-d47e971a35a4" msprop:DbColumnName="TipoCarburante" msprop:FriendlyName="TipoCarburante">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IDUnitaDiMisura" msprop:design-time-name="85217251-077f-4cb9-986e-1de943db5237" msprop:DbColumnName="IDUnitaDiMisura" msprop:FriendlyName="IDUnitaDiMisura">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimData" />
+          <xs:field xpath="PKData" />
+        </xs:unique>
+        <xs:unique name="dbo_Distributore_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Distributore" />
+          <xs:field xpath="IDDistributore" />
+        </xs:unique>
+        <xs:unique name="dbo_Percorrenze_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Percorrenze" />
+          <xs:field xpath="IDPercorrenza" />
+        </xs:unique>
+        <xs:unique name="dbo_Rifornimenti_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Rifornimenti" />
+          <xs:field xpath="IDRifornimento" />
+        </xs:unique>
+        <xs:unique name="dbo_TipoCarburante_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_TipoCarburante" />
+          <xs:field xpath="IDTipoCarburante" />
+        </xs:unique>
+        <xs:keyref name="FK_dbo_Rifornimenti_IDTipoCarburante" refer="dbo_TipoCarburante_Constraint1">
+          <xs:selector xpath=".//dbo_Rifornimenti" />
+          <xs:field xpath="IDTipoCarburante" />
+        </xs:keyref>
+        <xs:keyref name="FK_dbo_Rifornimenti_DataRifornimento" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Rifornimenti" />
+          <xs:field xpath="DataRifornimento" />
+        </xs:keyref>
+        <xs:keyref name="FK_dbo_Rifornimenti_IDDistributore" refer="dbo_Distributore_Constraint1">
+          <xs:selector xpath=".//dbo_Rifornimenti" />
+          <xs:field xpath="IDDistributore" />
+        </xs:keyref>
+        <xs:keyref name="FK_dbo_Percorrenze_IDTipoCarburante" refer="dbo_TipoCarburante_Constraint1">
+          <xs:selector xpath=".//dbo_Percorrenze" />
+          <xs:field xpath="IDTipoCarburante" />
+        </xs:keyref>
+        <xs:keyref name="FK_dbo_Percorrenze_DataPercorrenza" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Percorrenze" />
+          <xs:field xpath="DataPercorrenza" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <LogCarburanteZafira xmlns="" />
+  </Schema>
+</DataSourceView>

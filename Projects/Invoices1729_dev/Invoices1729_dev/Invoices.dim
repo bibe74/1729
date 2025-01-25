@@ -1,0 +1,222 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="54654ba9-5b24-43b5-99f0-ef862ed3c9b9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Invoices</ID>
+  <Name>Invoices</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f5fe4eca-82c1-4071-9e11-d47932375b5c">
+    <DataSourceViewID>DW1729</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="2c4da96c-d62a-40a6-b9c5-d1b179e4a8ee">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="760a009f-9f08-47f7-a64e-18e564b88dde">
+      <ID>Invoice Key</ID>
+      <Name>Invoice Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b2c4c779-5ff1-4f5c-85ed-bfda8080e637">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ab622420-1d20-452e-a4ae-2c5424991309">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>InvoiceKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="0bb617cd-03cc-4e18-9cb8-328b55bcb397">
+          <AttributeID>Invoice Year</AttributeID>
+          <Name>Invoice Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b4cb6cec-875d-41c6-a5d2-c68827b74931">
+          <AttributeID>Invoice Number</AttributeID>
+          <Name>Invoice Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="467dc6a8-7a4d-4e07-a79a-2b54c986e764">
+          <AttributeID>Invoice ID</AttributeID>
+          <Name>Invoice ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="529c0f2f-baee-4786-b896-4654568fa29e">
+          <AttributeID>Invoice Date Key</AttributeID>
+          <Name>Invoice Date Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6b104811-1585-4391-93b3-6fda79b6926a">
+          <AttributeID>Customer Key</AttributeID>
+          <Name>Customer Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8b8cb09f-92db-4c92-ada1-5d9ae1464977">
+          <AttributeID>Category Key</AttributeID>
+          <Name>Category Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="33df97f6-c77f-4bdf-8672-ce0f56f58b71">
+          <AttributeID>Vat Code Key</AttributeID>
+          <Name>Vat Code Key</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7946f492-227b-4056-8642-8227c1be8385">
+      <ID>Invoice Year</ID>
+      <Name>Invoice Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="38c02829-bce1-490e-870e-d9f3e5d3c6aa">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d4bf4559-2b0f-40c7-8d37-7a57beda5a64">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>InvoiceYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8a6bba92-05af-42f3-bb75-873fbb962ac1">
+      <ID>Invoice Number</ID>
+      <Name>Invoice Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3ed56289-b455-41ec-8726-fc21506d37af">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="36210ecc-0647-4ad5-9f04-4eb67f5b4bcf">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>InvoiceNumber</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dc9e9e9d-9f9c-4772-9f06-ab132d56916f">
+      <ID>Invoice ID</ID>
+      <Name>Invoice ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1d378024-ed1a-4451-9485-a8e7baceb15f">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9b695d2d-b997-49ed-8587-038024d7e8a6">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>InvoiceID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="265ca659-5a34-45d7-93c6-e69392387b29">
+      <ID>Invoice Date Key</ID>
+      <Name>Invoice Date Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ea6ea613-2011-41f6-a162-43762a346a61">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7dc7457c-a571-4285-8a58-11ca52a10a1b">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>InvoiceDateKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="82ad14db-898a-49e4-8465-2e17a521f744">
+      <ID>Customer Key</ID>
+      <Name>Customer Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="53f97166-08df-4970-9239-e233ed1aa00e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="923752a1-908f-4629-847e-d52f47bd7af4">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>CustomerKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e2aadbb9-9c9f-46f2-906b-8a37ccc6070d">
+      <ID>Category Key</ID>
+      <Name>Category Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d0cb5646-f165-4174-b47b-6eef912438b8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d0113ab4-9570-4195-ac44-993fb98e8bad">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>CategoryKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b840c83f-fd27-4036-aaad-31fd57f94f93">
+      <ID>Vat Code Key</ID>
+      <Name>Vat Code Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f30d9893-11f0-4a1b-a41d-d1e385adce27">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7dba4d05-0ce3-49c6-b1e1-ae080c8025e7">
+            <TableID>Fact_Invoices</TableID>
+            <ColumnID>VatCodeKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
