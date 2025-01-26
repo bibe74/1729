@@ -3,11 +3,17 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE FUNCTION [dbo].[ufn_GetEasterSunday] (@Year CHAR(4)) 
+/**
+ * @function dbo.ufn_GetEasterSunday
+ * @description Returns the Easter date for a given year
+*/
+
+CREATE   FUNCTION [dbo].[ufn_GetEasterSunday] (@Year CHAR(4)) 
 RETURNS DATE 
 AS 
 BEGIN 
     DECLARE
+        @ret DATE,
 		@EpactCalc INT,  
         @PaschalDaysCalc INT, 
         @NumOfDaysToSunday INT, 
@@ -22,6 +28,8 @@ BEGIN
 
     SET @EasterDay = @NumOfDaysToSunday + 28 - (31 * (@EasterMonth / 4));
 
-    RETURN (SELECT CONVERT(DATE, RTRIM(@Year) + RIGHT('0'+RTRIM(@EasterMonth), 2) + RIGHT('0'+RTRIM(@EasterDay), 2))); 
+    SELECT @ret = CONVERT(DATE, RTRIM(@Year) + RIGHT('0'+RTRIM(@EasterMonth), 2) + RIGHT('0'+RTRIM(@EasterDay), 2));
+
+    RETURN @ret;
 END;
 GO
