@@ -1,5 +1,3 @@
 CREATE SCHEMA [Fact]
 AUTHORIZATION [dbo]
 GO
-GRANT SELECT ON SCHEMA:: [Fact] TO [dw_reader]
-GO
