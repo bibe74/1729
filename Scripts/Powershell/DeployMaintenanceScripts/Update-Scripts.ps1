@@ -14,14 +14,7 @@ $ScriptDirectoryBase = $Config.ScriptDirectoryBase
 
 $ScriptsDirectory = $ScriptDirectoryBase + "\\scripts\\"
 
-$Source = $ScriptSourceDirectoryBase + "DarlingData\\sp_HumanEvents\\sp_HumanEvents.sql"
-Copy-Item $Source $ScriptsDirectory
-
-$Source = $ScriptSourceDirectoryBase + "DarlingData\\sp_HumanEvents\\sp_HumanEvents.sql"
-Copy-Item $Source -Destination $ScriptsDirectory
-$Source = $ScriptSourceDirectoryBase + "DarlingData\\sp_PressureDetector\\sp_PressureDetector.sql"
-Copy-Item $Source -Destination $ScriptsDirectory
-$Source = $ScriptSourceDirectoryBase + "DarlingData\\sp_QuickieStore\\sp_QuickieStore.sql"
+$Source = $ScriptSourceDirectoryBase + "DarlingData\\Install-All\\DarlingData.sql"
 Copy-Item $Source -Destination $ScriptsDirectory
 $Source = $ScriptSourceDirectoryBase + "SQL-Server-First-Responder-Kit\\Install-All-Scripts.sql"
 Copy-Item $Source -Destination $ScriptsDirectory
