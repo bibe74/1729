@@ -32,7 +32,7 @@ foreach ($server in $Servers) {
     foreach ($script in $common_scripts) {
         Write-Host "Deploying" $script.Name
         #Invoke-Sqlcmd -ServerInstance $server.Name -TrustServerCertificate -InputFile $script.FullName -DisableVariables
-        Invoke-Sqlcmd -ServerInstance $server.Name -InputFile $script.FullName -DisableVariables
+        Invoke-Sqlcmd -ServerInstance $server.Name -Encrypt Optional -InputFile $script.FullName -DisableVariables
     }
 
     switch($server.sql_version)
@@ -53,7 +53,7 @@ foreach ($server in $Servers) {
         foreach ($script in $scripts) {
             Write-Host "Deploying" $script.Name
             #Invoke-Sqlcmd -ServerInstance $server.Name -TrustServerCertificate -InputFile $script.FullName -DisableVariables
-            Invoke-Sqlcmd -ServerInstance $server.Name -InputFile $script.FullName -DisableVariables
+            Invoke-Sqlcmd -ServerInstance $server.Name -Encrypt Optional -InputFile $script.FullName -DisableVariables
         }
     }
 }
