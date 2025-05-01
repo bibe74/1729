@@ -5,7 +5,8 @@ IF OBJECT_ID('dbo.SourceTable', 'U') IS NULL
 BEGIN
 
     CREATE TABLE dbo.SourceTable (
-        f0 VARCHAR(40) NOT NULL CONSTRAINT PK_SourceTable PRIMARY KEY CLUSTERED,
+        PrimaryKey VARCHAR(40) NOT NULL CONSTRAINT PK_SourceTable PRIMARY KEY CLUSTERED,
+        f0 VARCHAR(40) NULL,
         f1 VARCHAR(40) NULL,
         f2 VARCHAR(40) NULL,
         f3 VARCHAR(40) NULL,
@@ -25,6 +26,7 @@ BEGIN
     );
 
     INSERT INTO dbo.SourceTable (
+        PrimaryKey,
         f0,
         f1,
         f2,
@@ -43,7 +45,8 @@ BEGIN
         f15,
         f16
     ) VALUES (
-        'First',   -- f0 - varchar(40)
+        'First',
+        '0x',
         'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
         '8',
         '712467eab4004583eb8fb7f89',
@@ -65,55 +68,17 @@ BEGIN
 END;
 GO
 
-SELECT f0,
-       CONCAT(
-       '0x',
-       f1,
-       f2,
-       f3,
-       f4,
-       f5,
-       f6,
-       f7,
-       f8,
-       f9,
-       f10,
-       f11,
-       f12,
-       f13,
-       f14,
-       f15,
-       f16),
-        'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
-        '8',
-        '712467eab4004583eb8fb7f89',
-        '55ad340609f4b30283e4888325',
-        '7',
-        '1415a085125e8f7cdc99fd91dbd',
-        'f',
-        '280373c5b',
-        'd8823e3156348f5bae6dacd436c919c6dd53e2',
-        'b',
-        '487da03fd02396306d248cda0',
-        'e99f33420f577ee8ce54b67080',
-        'a',
-        '80d1ec69821bcb6a8839396f965',
-        '2',
-        'b6ff72a70'
-
-FROM dbo.SourceTable
-
 CREATE OR ALTER VIEW dbo.DimSourceTableView
 AS
 SELECT
     -- Primary key
-    ST.f0,
+    ST.PrimaryKey,
 
     -- Data warehouse fields
     CURRENT_TIMESTAMP AS InsertedDatetime,
     CURRENT_TIMESTAMP AS UpdatedDatetime,
-    CONVERT(VARBINARY(200), CONCAT(
-        '0x',
+    CONVERT(VARBINARY(34), HASHBYTES('MD5', CONCAT(
+        ST.f0,
         ST.f1,
         ST.f2,
         ST.f3,
@@ -130,9 +95,10 @@ SELECT
         ST.f14,
         ST.f15,
         ST.f16
-    )) AS ChangeHashKey,
+    ))) AS ChangeHashKey,
     CAST(0 AS BIT) AS IsDeleted,
 
+    ST.f0,
     ST.f1,
     ST.f2,
     ST.f3,
@@ -153,7 +119,7 @@ SELECT
 FROM dbo.SourceTable ST;
 GO
 
---DROP TABLE IF EXISTS dbo.DimSourceTable;
+DROP TABLE IF EXISTS dbo.DimSourceTable;
 GO
 
 IF OBJECT_ID('dbo.DimSourceTable', 'U') IS NULL
@@ -161,7 +127,7 @@ BEGIN
 
     SELECT TOP (0) * INTO dbo.DimSourceTable FROM dbo.DimSourceTableView;
 
-    ALTER TABLE dbo.DimSourceTable ADD CONSTRAINT PK_DimSourceTable PRIMARY KEY CLUSTERED (f0);
+    ALTER TABLE dbo.DimSourceTable ADD CONSTRAINT PK_DimSourceTable PRIMARY KEY CLUSTERED (PrimaryKey);
 
 END;
 GO
@@ -174,15 +140,16 @@ BEGIN
 
     MERGE INTO dbo.DimSourceTable AS TGT
     USING dbo.DimSourceTableView AS SRC
-    ON SRC.f0 = TGT.f0
+    ON SRC.PrimaryKey = TGT.PrimaryKey
 
     WHEN NOT MATCHED THEN INSERT
         VALUES (
-            SRC.f0,
+            SRC.PrimaryKey,
             SRC.InsertedDatetime,
             SRC.UpdatedDatetime,
             SRC.ChangeHashKey,
             SRC.IsDeleted,
+            SRC.f0,
             SRC.f1,
             SRC.f2,
             SRC.f3,
@@ -204,6 +171,7 @@ BEGIN
     WHEN MATCHED AND SRC.ChangeHashKey <> TGT.ChangeHashKey THEN UPDATE
         SET TGT.ChangeHashKey = SRC.ChangeHashKey,
             TGT.UpdatedDatetime = SRC.UpdatedDatetime,
+            TGT.f0 = SRC.f0,
             TGT.f1 = SRC.f1,
             TGT.f2 = SRC.f2,
             TGT.f3 = SRC.f3,
@@ -225,7 +193,7 @@ BEGIN
         SET TGT.IsDeleted = CAST(1 AS BIT),
             TGT.UpdatedDatetime = CURRENT_TIMESTAMP
     
-    OUTPUT $action AS [Action], COALESCE(Inserted.f0, Deleted.f0) AS [f0];
+    OUTPUT $action AS [Action], COALESCE(Inserted.PrimaryKey, Deleted.PrimaryKey) AS [PrimaryKey];
 
 END;
 GO
@@ -234,9 +202,8 @@ EXEC dbo.usp_Merge_DimSourceTable;
 GO
 
 UPDATE dbo.SourceTable
-SET f2 = '4'
-
-WHERE f0 = 'First';
+SET f2 = '5'
+WHERE PrimaryKey = 'First';
 GO
 
 EXEC dbo.usp_Merge_DimSourceTable;
@@ -250,7 +217,11 @@ SET f2 = '8',
     f13 = 'a',
     f15 = '2'
 
-WHERE f0 = 'First';
+WHERE PrimaryKey = 'First';
+GO
+
+SELECT * FROM dbo.DimSourceTable
+UNION ALL SELECT * FROM dbo.DimSourceTableView;
 GO
 
 EXEC dbo.usp_Merge_DimSourceTable;
@@ -264,7 +235,11 @@ SET f2 = '0',
     f13 = '2',
     f15 = 'a'
 
-WHERE f0 = 'First';
+WHERE PrimaryKey = 'First';
+GO
+
+SELECT * FROM dbo.DimSourceTable
+UNION ALL SELECT * FROM dbo.DimSourceTableView;
 GO
 
 EXEC dbo.usp_Merge_DimSourceTable;
@@ -278,49 +253,94 @@ SET f2 = '8',
     f13 = 'a',
     f15 = '2'
 
-WHERE f0 = 'First';
+WHERE PrimaryKey = 'First';
 GO
 
 EXEC dbo.usp_Merge_DimSourceTable;
 GO
 
+WITH T
+AS (
+SELECT
+    CONVERT(VARBINARY(34), HASHBYTES('MD5', CAST(CONCAT(
+        '0x',
+        'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
+        '8',
+        '712467eab4004583eb8fb7f89',
+        '55ad340609f4b30283e4888325',
+        '7',
+        '1415a085125e8f7cdc99f d91dbd',
+        'f',
+        '280373c5b',
+        'd8823e3156348f5bae6dacd436c919c6dd53e2',
+        'b',
+        '487da03fd02396306d248cda0',
+        'e99f33420f577ee8ce54b67080',
+        'a',
+        '80d1ec69821bcb6a8839396f965',
+        '2',
+        'b6ff72a70') AS VARBINARY)
+    )) AS HistoricalHashKey,
+    CONVERT(VARBINARY(34), HASHBYTES('MD5', CAST(CONCAT(
+        '0x',
+        'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
+        '0',
+        '712467eab4004583eb8fb7f89',
+        '55ad340609f4b30283e4888325',
+        'f',
+        '1415a085125e8f7cdc99fd91dbd',
+        '7',
+        '280373c5b',
+        'd8823e3156348f5bae6dacd436c919c6dd53e2',
+        '3',
+        '487da03fd02396306d248cda0',
+        'e99f33420f577ee8ce54b67080',
+        '2',
+        '80d1ec69821bcb6a8839396f965',
+        'a',
+        'b6ff72a70') AS VARBINARY)
+    )) AS ChangeHashKey
+) SELECT * FROM T WHERE T.HistoricalHashKey <> T.ChangeHashKey;
 
 SELECT
-       	CONVERT(VARBINARY(20), HASHBYTES('MD5', CAST(CONCAT(
-            '0x',
-            'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
-            '8',
-            '712467eab4004583eb8fb7f89',
-            '55ad340609f4b30283e4888325',
-            '7',
-            '1415a085125e8f7cdc99f d91dbd',
-            'f',
-            '280373c5b',
-            'd8823e3156348f5bae6dacd436c919c6dd53e2',
-            'b',
-            '487da03fd02396306d248cda0',
-            'e99f33420f577ee8ce54b67080',
-            'a',
-            '80d1ec69821bcb6a8839396f965',
-            '2',
-            'b6ff72a70') AS VARBINARY)
-        )) AS HistoricalHashKey,
-        CONVERT(VARBINARY(20), HASHBYTES('MD5', CAST(CONCAT(
-            '0x',
-            'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
-            '0',
-            '712467eab4004583eb8fb7f89',
-            '55ad340609f4b30283e4888325',
-            'f',
-            '1415a085125e8f7cdc99fd91dbd',
-            '7',
-            '280373c5b',
-            'd8823e3156348f5bae6dacd436c919c6dd53e2',
-            '3',
-            '487da03fd02396306d248cda0',
-            'e99f33420f577ee8ce54b67080',
-            '2',
-            '80d1ec69821bcb6a8839396f965',
-            'a',
-            'b6ff72a70') AS VARBINARY)
-        )) AS ChangeHashKey;
+    CONVERT(VARBINARY(20), HASHBYTES('MD5', CAST(CONCAT(
+        '0x',
+        'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
+2        '8',
+        '712467eab4004583eb8fb7f89',
+        '55ad340609f4b30283e4888325',
+5        '7',
+        '1415a085125e8f7cdc99f d91dbd',
+7        'f',
+        '280373c5b',
+        'd8823e3156348f5bae6dacd436c919c6dd53e2',
+10        'b',
+        '487da03fd02396306d248cda0',
+        'e99f33420f577ee8ce54b67080',
+13        'a',
+        '80d1ec69821bcb6a8839396f965',
+15        '2',
+        'b6ff72a70') AS VARBINARY)
+    )) AS HistoricalHashKey,
+    CONVERT(VARBINARY(20), HASHBYTES('MD5', CAST(CONCAT(
+        '0x',
+        'd131dd02c5e6eec4693d9a0698aff95c2fcab5',
+        '0',
+        '712467eab4004583eb8fb7f89',
+        '55ad340609f4b30283e4888325',
+        'f',
+        '1415a085125e8f7cdc99fd91dbd',
+        '7',
+        '280373c5b',
+        'd8823e3156348f5bae6dacd436c919c6dd53e2',
+        '3',
+        '487da03fd02396306d248cda0',
+        'e99f33420f577ee8ce54b67080',
+        '2',
+        '80d1ec69821bcb6a8839396f965',
+        'a',
+        'b6ff72a70') AS VARBINARY)
+    )) AS ChangeHashKey;
+
+
+    SELECT LEN('0x3A52373A0E1E1563C43F9F20CCD4AF1B')
