@@ -3,7 +3,7 @@ SET NOEXEC OFF;
 --*/ SET NOEXEC ON;
 
 /*
- * file: 10-wwidw_manual-create-database.sql
+ * file: 20-wwidw_manual-create-database.sql
 */
 
 USE master;
