@@ -23,6 +23,8 @@ $ScriptsDirectory = $ScriptDirectoryBase + "\\scripts_common\\"
 
 $Source = $ScriptSourceDirectoryBase + "sp_CheckSecurity\\sp_CheckSecurity.sql"
 Copy-Item $Source -Destination $ScriptsDirectory
+$Source = $ScriptSourceDirectoryBase + "sp_CheckTempdb\\sp_CheckTempdb.sql"
+Copy-Item $Source -Destination $ScriptsDirectory
 $Source = $ScriptSourceDirectoryBase + "sp_whoisactive\\sp_WhoIsActive.sql"
 Copy-Item $Source -Destination $ScriptsDirectory
 $Source = $ScriptSourceDirectoryBase + "sql-server-maintenance-solution\\MaintenanceSolution.sql"
