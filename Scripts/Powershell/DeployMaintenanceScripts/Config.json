@@ -76,6 +76,11 @@
             "name":"EPISQL2021"
 			,"group":"cesi"
             ,"sql_version":"2019"
+        },
+        {
+            "name":"SRVDBDWH.sistemi.local"
+			,"group":"fs"
+            ,"sql_version":"2022"
         }
     ]
 }
