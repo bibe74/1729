@@ -10,7 +10,7 @@ License: https://ola.hallengren.com/license.html
 
 GitHub: https://github.com/olahallengren/sql-server-maintenance-solution
 
-Version: 2025-06-14 16:13:00
+Version: 2025-07-22 16:49:16
 
 You can contact me by e-mail at ola@hallengren.com.
 
@@ -137,7 +137,7 @@ BEGIN
   --// Source:  https://ola.hallengren.com                                                        //--
   --// License: https://ola.hallengren.com/license.html                                           //--
   --// GitHub:  https://github.com/olahallengren/sql-server-maintenance-solution                  //--
-  --// Version: 2025-06-14 16:13:00                                                               //--
+  --// Version: 2025-07-22 16:49:16                                                               //--
   ----------------------------------------------------------------------------------------------------
 
   SET NOCOUNT ON
@@ -484,7 +484,7 @@ BEGIN
   --// Source:  https://ola.hallengren.com                                                        //--
   --// License: https://ola.hallengren.com/license.html                                           //--
   --// GitHub:  https://github.com/olahallengren/sql-server-maintenance-solution                  //--
-  --// Version: 2025-06-14 16:13:00                                                               //--
+  --// Version: 2025-07-22 16:49:16                                                               //--
   ----------------------------------------------------------------------------------------------------
 
   SET NOCOUNT ON
@@ -553,10 +553,13 @@ BEGIN
   DECLARE @CurrentAvailabilityGroupID uniqueidentifier
   DECLARE @CurrentAvailabilityGroup nvarchar(max)
   DECLARE @CurrentAvailabilityGroupRole nvarchar(max)
+  DECLARE @CurrentAvailabilityGroupDatabaseReplicaSynchronizationState nvarchar(max)
+  DECLARE @CurrentAvailabilityGroupDatabaseReplicaSynchronizationHealth nvarchar(max)
   DECLARE @CurrentAvailabilityGroupBackupPreference nvarchar(max)
   DECLARE @CurrentIsPreferredBackupReplica bit
   DECLARE @CurrentDatabaseMirroringRole nvarchar(max)
   DECLARE @CurrentLogShippingRole nvarchar(max)
+  DECLARE @CurrentBackupOperationSupportedOnSecondaryReplicas bit
 
   DECLARE @CurrentBackupSetID int
   DECLARE @CurrentIsMirror bit
@@ -3110,7 +3113,7 @@ BEGIN
   ----------------------------------------------------------------------------------------------------
 
   WHILE (1 = 1)
-  BEGIN
+  BEGIN -- Start of database loop
 
     IF @DatabasesInParallel = 'Y'
     BEGIN
@@ -3221,6 +3224,12 @@ BEGIN
       SELECT @CurrentAvailabilityGroupRole = role_desc
       FROM sys.dm_hadr_availability_replica_states
       WHERE replica_id = @CurrentReplicaID
+
+      SELECT @CurrentAvailabilityGroupDatabaseReplicaSynchronizationState = synchronization_state_desc,
+             @CurrentAvailabilityGroupDatabaseReplicaSynchronizationHealth = synchronization_health_desc
+      FROM sys.dm_hadr_database_replica_states
+      WHERE replica_id = @CurrentReplicaID
+      AND database_id = DB_ID(@CurrentDatabaseName)
 
       SELECT @CurrentAvailabilityGroup = [name],
              @CurrentAvailabilityGroupBackupPreference = UPPER(automated_backup_preference_desc)
@@ -3338,10 +3347,31 @@ BEGIN
 
     IF @CurrentAvailabilityGroup IS NOT NULL
     BEGIN
+      IF ((@CurrentBackupType = 'FULL' AND @CopyOnly = 'N' AND @Version >= 17)
+      OR (@CurrentBackupType = 'DIFF' AND @CopyOnly = 'N' AND @Version >= 17)
+      OR (@CurrentBackupType = 'FULL' AND @CopyOnly = 'Y')
+      OR (@CurrentBackupType = 'LOG' AND @CopyOnly = 'N'))
+      BEGIN
+        SET @CurrentBackupOperationSupportedOnSecondaryReplicas = 1
+      END
+      ELSE
+      BEGIN
+        SET @CurrentBackupOperationSupportedOnSecondaryReplicas = 0
+      END
+    END
+
+    IF @CurrentAvailabilityGroup IS NOT NULL
+    BEGIN
       SET @DatabaseMessage = 'Availability group: ' + ISNULL(@CurrentAvailabilityGroup,'N/A')
       RAISERROR('%s',10,1,@DatabaseMessage) WITH NOWAIT
 
       SET @DatabaseMessage = 'Availability group role: ' + ISNULL(@CurrentAvailabilityGroupRole,'N/A')
+      RAISERROR('%s',10,1,@DatabaseMessage) WITH NOWAIT
+
+      SET @DatabaseMessage = 'Availability group database replica synchronization state: ' + ISNULL(@CurrentAvailabilityGroupDatabaseReplicaSynchronizationState,'N/A')
+      RAISERROR('%s',10,1,@DatabaseMessage) WITH NOWAIT
+
+      SET @DatabaseMessage = 'Availability group database replica synchronization health: ' + ISNULL(@CurrentAvailabilityGroupDatabaseReplicaSynchronizationHealth,'N/A')
       RAISERROR('%s',10,1,@DatabaseMessage) WITH NOWAIT
 
       SET @DatabaseMessage = 'Availability group backup preference: ' + ISNULL(@CurrentAvailabilityGroupBackupPreference,'N/A')
@@ -3349,6 +3379,12 @@ BEGIN
 
       SET @DatabaseMessage = 'Is preferred backup replica: ' + CASE WHEN @CurrentIsPreferredBackupReplica = 1 THEN 'Yes' WHEN @CurrentIsPreferredBackupReplica = 0 THEN 'No' ELSE 'N/A' END
       RAISERROR('%s',10,1,@DatabaseMessage) WITH NOWAIT
+
+      IF @CurrentAvailabilityGroupBackupPreference IN('SECONDARY', 'SECONDARY_ONLY')
+      BEGIN
+        SET @DatabaseMessage = 'Is backup operation supported on secondary replicas: ' + CASE WHEN @CurrentBackupOperationSupportedOnSecondaryReplicas = 1 THEN 'Yes' WHEN @CurrentBackupOperationSupportedOnSecondaryReplicas = 0 THEN 'No' ELSE 'N/A' END
+        RAISERROR('%s',10,1,@DatabaseMessage) WITH NOWAIT
+      END
     END
 
     IF @CurrentDatabaseMirroringRole IS NOT NULL
@@ -3402,18 +3438,14 @@ BEGIN
     AND NOT (@CurrentBackupType = 'LOG' AND @CurrentRecoveryModel IN('FULL','BULK_LOGGED') AND @CurrentLogLSN IS NULL)
     AND NOT (@CurrentBackupType = 'DIFF' AND @CurrentDifferentialBaseLSN IS NULL)
     AND NOT (@CurrentBackupType IN('DIFF','LOG') AND @CurrentDatabaseName = 'master')
-    AND NOT (@CurrentAvailabilityGroup IS NOT NULL AND @CurrentBackupType = 'FULL' AND @CopyOnly = 'N' AND (@CurrentAvailabilityGroupRole <> 'PRIMARY' OR @CurrentAvailabilityGroupRole IS NULL))
-    AND NOT (@CurrentAvailabilityGroup IS NOT NULL AND @CurrentBackupType = 'FULL' AND @CopyOnly = 'Y' AND (@CurrentIsPreferredBackupReplica <> 1 OR @CurrentIsPreferredBackupReplica IS NULL) AND @OverrideBackupPreference = 'N')
-    AND NOT (@CurrentAvailabilityGroup IS NOT NULL AND @CurrentBackupType = 'DIFF' AND (@CurrentAvailabilityGroupRole <> 'PRIMARY' OR @CurrentAvailabilityGroupRole IS NULL))
-    AND NOT (@CurrentAvailabilityGroup IS NOT NULL AND @CurrentBackupType = 'LOG' AND @CopyOnly = 'N' AND (@CurrentIsPreferredBackupReplica <> 1 OR @CurrentIsPreferredBackupReplica IS NULL) AND @OverrideBackupPreference = 'N')
-    AND NOT (@CurrentAvailabilityGroup IS NOT NULL AND @CurrentBackupType = 'LOG' AND @CopyOnly = 'Y' AND (@CurrentAvailabilityGroupRole <> 'PRIMARY' OR @CurrentAvailabilityGroupRole IS NULL))
-    AND NOT ((@CurrentLogShippingRole = 'PRIMARY' AND @CurrentLogShippingRole IS NOT NULL) AND @CurrentBackupType = 'LOG' AND @ExcludeLogShippedFromLogBackup = 'Y')
+    AND NOT (@CurrentAvailabilityGroup IS NOT NULL AND @CurrentBackupOperationSupportedOnSecondaryReplicas = 0 AND (@CurrentAvailabilityGroupRole <> 'PRIMARY' OR @CurrentAvailabilityGroupRole IS NULL))
+    AND NOT (@CurrentAvailabilityGroup IS NOT NULL AND @CurrentBackupOperationSupportedOnSecondaryReplicas = 1 AND (@CurrentIsPreferredBackupReplica <> 1 OR @CurrentIsPreferredBackupReplica IS NULL) AND @OverrideBackupPreference = 'N')
     AND NOT (@CurrentIsReadOnly = 1 AND @Updateability = 'READ_WRITE')
     AND NOT (@CurrentIsReadOnly = 0 AND @Updateability = 'READ_ONLY')
     AND NOT (@CurrentBackupType = 'LOG' AND @LogSizeSinceLastLogBackup IS NOT NULL AND @TimeSinceLastLogBackup IS NOT NULL AND NOT(@CurrentLogSizeSinceLastLogBackup >= @LogSizeSinceLastLogBackup OR @CurrentLogSizeSinceLastLogBackup IS NULL OR DATEDIFF(SECOND,@CurrentLastLogBackup,SYSDATETIME()) >= @TimeSinceLastLogBackup OR @CurrentLastLogBackup IS NULL))
     AND NOT (@CurrentBackupType = 'LOG' AND @Updateability = 'READ_ONLY' AND @BackupSoftware = 'DATA_DOMAIN_BOOST')
     AND NOT (@CurrentBackupType = 'DIFF' AND @MinDatabaseSizeForDifferentialBackup IS NOT NULL AND (COALESCE(CAST(@CurrentAllocatedExtentPageCount AS bigint) * 8192, CAST(@CurrentDatabaseSize AS bigint) * 8192) < CAST(@MinDatabaseSizeForDifferentialBackup AS bigint) * 1024 * 1024))
-    BEGIN
+    BEGIN -- Start of database backup check
 
       IF @CurrentBackupType = 'LOG' AND (@CleanupTime IS NOT NULL OR @MirrorCleanupTime IS NOT NULL)
       BEGIN
@@ -4630,7 +4662,7 @@ BEGIN
           SET @CurrentCommandType = NULL
         END
       END
-    END
+    END -- End of database backup check
 
     IF @CurrentDatabaseState = 'SUSPECT'
     BEGIN
@@ -4691,10 +4723,13 @@ BEGIN
     SET @CurrentAvailabilityGroupID = NULL
     SET @CurrentAvailabilityGroup = NULL
     SET @CurrentAvailabilityGroupRole = NULL
+    SET @CurrentAvailabilityGroupDatabaseReplicaSynchronizationState = NULL
+    SET @CurrentAvailabilityGroupDatabaseReplicaSynchronizationHealth = NULL
     SET @CurrentAvailabilityGroupBackupPreference = NULL
     SET @CurrentIsPreferredBackupReplica = NULL
     SET @CurrentDatabaseMirroringRole = NULL
     SET @CurrentLogShippingRole = NULL
+    SET @CurrentBackupOperationSupportedOnSecondaryReplicas = NULL
     SET @CurrentLastLogBackup = NULL
     SET @CurrentLogSizeSinceLastLogBackup = NULL
     SET @CurrentAllocatedExtentPageCount = NULL
@@ -4713,7 +4748,7 @@ BEGIN
     DELETE FROM @CurrentCleanupDates
     DELETE FROM @CurrentBackupSet
 
-  END
+  END -- End of database loop
 
   ----------------------------------------------------------------------------------------------------
   --// Log completing information                                                                 //--
@@ -4776,7 +4811,7 @@ BEGIN
   --// Source:  https://ola.hallengren.com                                                        //--
   --// License: https://ola.hallengren.com/license.html                                           //--
   --// GitHub:  https://github.com/olahallengren/sql-server-maintenance-solution                  //--
-  --// Version: 2025-06-14 16:13:00                                                               //--
+  --// Version: 2025-07-22 16:49:16                                                               //--
   ----------------------------------------------------------------------------------------------------
 
   SET NOCOUNT ON
@@ -6675,7 +6710,7 @@ BEGIN
   --// Source:  https://ola.hallengren.com                                                        //--
   --// License: https://ola.hallengren.com/license.html                                           //--
   --// GitHub:  https://github.com/olahallengren/sql-server-maintenance-solution                  //--
-  --// Version: 2025-06-14 16:13:00                                                               //--
+  --// Version: 2025-07-22 16:49:16                                                               //--
   ----------------------------------------------------------------------------------------------------
 
   SET NOCOUNT ON
@@ -6759,7 +6794,8 @@ BEGIN
   DECLARE @CurrentIsImageText bit
   DECLARE @CurrentIsNewLOB bit
   DECLARE @CurrentIsFileStream bit
-  DECLARE @CurrentHasColumnstore bit
+  DECLARE @CurrentHasClusteredColumnstore bit
+  DECLARE @CurrentHasNonClusteredColumnstore bit
   DECLARE @CurrentIsComputed bit
   DECLARE @CurrentIsClusteredIndexComputed bit
   DECLARE @CurrentIsTimestamp bit
@@ -6815,7 +6851,8 @@ BEGIN
                                        IsImageText bit,
                                        IsNewLOB bit,
                                        IsFileStream bit,
-                                       HasColumnstore bit,
+                                       HasClusteredColumnstore bit,
+                                       HasNonClusteredColumnstore bit,
                                        IsComputed bit,
                                        IsClusteredIndexComputed bit,
                                        IsTimestamp bit,
@@ -8164,7 +8201,7 @@ BEGIN
       IF (EXISTS(SELECT * FROM @ActionsPreferred) OR @UpdateStatistics IS NOT NULL) AND (SYSDATETIME() < DATEADD(SECOND,@TimeLimit,@StartTime) OR @TimeLimit IS NULL)
       BEGIN
         SET @CurrentCommand = 'SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;'
-                              + ' SELECT SchemaID, SchemaName, ObjectID, ObjectName, ObjectType, IsMemoryOptimized, IndexID, IndexName, IndexType, AllowPageLocks, HasFilter, IsImageText, IsNewLOB, IsFileStream, HasColumnstore, IsComputed, IsClusteredIndexComputed, IsTimestamp, OnReadOnlyFileGroup, ResumableIndexOperation, StatisticsID, StatisticsName, NoRecompute, IsIncremental, PartitionID, PartitionNumber, PartitionCount, [Order], Selected, Completed'
+                              + ' SELECT SchemaID, SchemaName, ObjectID, ObjectName, ObjectType, IsMemoryOptimized, IndexID, IndexName, IndexType, AllowPageLocks, HasFilter, IsImageText, IsNewLOB, IsFileStream, HasClusteredColumnstore, HasNonClusteredColumnstore, IsComputed, IsClusteredIndexComputed, IsTimestamp, OnReadOnlyFileGroup, ResumableIndexOperation, StatisticsID, StatisticsName, NoRecompute, IsIncremental, PartitionID, PartitionNumber, PartitionCount, [Order], Selected, Completed'
                               + ' FROM ('
 
         IF EXISTS(SELECT * FROM @ActionsPreferred) OR @UpdateStatistics IN('ALL','INDEX')
@@ -8188,7 +8225,9 @@ BEGIN
 
                                                     + ', CASE WHEN indexes.[type] = 1 AND EXISTS(SELECT * FROM sys.columns columns WHERE columns.[object_id] = objects.object_id  AND columns.is_filestream = 1) THEN 1 ELSE 0 END AS IsFileStream'
 
-                                                    + ', CASE WHEN EXISTS(SELECT * FROM sys.indexes indexes WHERE indexes.[object_id] = objects.object_id AND [type] IN(5,6)) THEN 1 ELSE 0 END AS HasColumnstore'
+                                                    + ', CASE WHEN EXISTS(SELECT * FROM sys.indexes indexes WHERE indexes.[object_id] = objects.object_id AND [type] = 5) THEN 1 ELSE 0 END AS HasClusteredColumnstore'
+
+                                                    + ', CASE WHEN EXISTS(SELECT * FROM sys.indexes indexes WHERE indexes.[object_id] = objects.object_id AND [type] = 6) THEN 1 ELSE 0 END AS HasNonClusteredColumnstore'
 
                                                     + ', CASE WHEN EXISTS(SELECT * FROM sys.index_columns index_columns INNER JOIN sys.columns columns ON index_columns.object_id = columns.object_id AND index_columns.column_id = columns.column_id WHERE (index_columns.key_ordinal > 0 OR index_columns.partition_ordinal > 0) AND columns.is_computed = 1 AND index_columns.object_id = indexes.object_id AND index_columns.index_id = indexes.index_id) THEN 1 ELSE 0 END AS IsComputed'
 
@@ -8249,7 +8288,8 @@ BEGIN
                                                     + ', NULL AS IsImageText'
                                                     + ', NULL AS IsNewLOB'
                                                     + ', NULL AS IsFileStream'
-                                                    + ', NULL AS HasColumnstore'
+                                                    + ', NULL AS HasClusteredColumnstore'
+                                                    + ', NULL AS HasNonClusteredColumnstore'
                                                     + ', NULL AS IsComputed'
                                                     + ', NULL AS IsClusteredIndexComputed'
                                                     + ', NULL AS IsTimestamp'
@@ -8298,7 +8338,8 @@ BEGIN
                                                       + ', NULL AS IsImageText'
                                                       + ', NULL AS IsNewLOB'
                                                       + ', NULL AS IsFileStream'
-                                                      + ', NULL AS HasColumnstore'
+                                                      + ', NULL AS HasClusteredColumnstore'
+                                                      + ', NULL AS HasNonClusteredColumnstore'
                                                       + ', NULL AS IsComputed'
                                                       + ', NULL AS IsClusteredIndexComputed'
                                                       + ', NULL AS IsTimestamp'
@@ -8328,7 +8369,7 @@ BEGIN
 
         SET @CurrentCommand = @CurrentCommand + ') IndexesStatistics'
 
-        INSERT INTO @tmpIndexesStatistics (SchemaID, SchemaName, ObjectID, ObjectName, ObjectType, IsMemoryOptimized, IndexID, IndexName, IndexType, AllowPageLocks, HasFilter, IsImageText, IsNewLOB, IsFileStream, HasColumnstore, IsComputed, IsClusteredIndexComputed, IsTimestamp, OnReadOnlyFileGroup, ResumableIndexOperation, StatisticsID, StatisticsName, [NoRecompute], IsIncremental, PartitionID, PartitionNumber, PartitionCount, [Order], Selected, Completed)
+        INSERT INTO @tmpIndexesStatistics (SchemaID, SchemaName, ObjectID, ObjectName, ObjectType, IsMemoryOptimized, IndexID, IndexName, IndexType, AllowPageLocks, HasFilter, IsImageText, IsNewLOB, IsFileStream, HasClusteredColumnstore, HasNonClusteredColumnstore, IsComputed, IsClusteredIndexComputed, IsTimestamp, OnReadOnlyFileGroup, ResumableIndexOperation, StatisticsID, StatisticsName, [NoRecompute], IsIncremental, PartitionID, PartitionNumber, PartitionCount, [Order], Selected, Completed)
         EXECUTE @CurrentDatabase_sp_executesql @stmt = @CurrentCommand
         SET @Error = @@ERROR
         IF @Error <> 0
@@ -8432,7 +8473,8 @@ BEGIN
                      @CurrentIsImageText = IsImageText,
                      @CurrentIsNewLOB = IsNewLOB,
                      @CurrentIsFileStream = IsFileStream,
-                     @CurrentHasColumnstore = HasColumnstore,
+                     @CurrentHasClusteredColumnstore = HasClusteredColumnstore,
+                     @CurrentHasNonClusteredColumnstore = HasNonClusteredColumnstore,
                      @CurrentIsComputed = IsComputed,
                      @CurrentIsClusteredIndexComputed = IsClusteredIndexComputed,
                      @CurrentIsTimestamp = IsTimestamp,
@@ -8636,8 +8678,9 @@ BEGIN
           AND NOT (@CurrentIndexType = 4)
           AND NOT (@CurrentIndexType = 5 AND @Version < 15)
           AND NOT (@CurrentIndexType = 6 AND @Version < 14)
-          AND NOT (@CurrentIndexType = 1 AND @CurrentHasColumnstore = 1 AND @Version < 13)
-          AND NOT (@CurrentIndexType = 2 AND @CurrentHasColumnstore = 1 AND @Version < 15)
+          AND NOT (@CurrentIndexType = 1 AND @CurrentHasNonClusteredColumnstore = 1 AND @Version < 13)
+          AND NOT (@CurrentIndexType = 2 AND @CurrentHasClusteredColumnstore = 1 AND @Version < 15)
+          AND NOT (@CurrentIndexType = 2 AND @CurrentHasNonClusteredColumnstore = 1 AND @Version < 13)
           BEGIN
             INSERT INTO @CurrentActionsAllowed ([Action])
             VALUES ('INDEX_REBUILD_ONLINE')
@@ -8725,7 +8768,8 @@ BEGIN
           SET @CurrentComment += 'ImageText: ' + CASE WHEN @CurrentIsImageText = 1 THEN 'Yes' WHEN @CurrentIsImageText = 0 THEN 'No' ELSE 'N/A' END + ', '
           SET @CurrentComment += 'NewLOB: ' + CASE WHEN @CurrentIsNewLOB = 1 THEN 'Yes' WHEN @CurrentIsNewLOB = 0 THEN 'No' ELSE 'N/A' END + ', '
           SET @CurrentComment += 'FileStream: ' + CASE WHEN @CurrentIsFileStream = 1 THEN 'Yes' WHEN @CurrentIsFileStream = 0 THEN 'No' ELSE 'N/A' END + ', '
-          IF @Version >= 11 SET @CurrentComment += 'HasColumnStore: ' + CASE WHEN @CurrentHasColumnstore = 1 THEN 'Yes' WHEN @CurrentHasColumnstore = 0 THEN 'No' ELSE 'N/A' END + ', '
+          IF @Version >= 12 AND @CurrentIndexType NOT IN(5, 6) SET @CurrentComment += 'HasClusteredColumnstore: ' + CASE WHEN @CurrentHasClusteredColumnstore = 1 THEN 'Yes' WHEN @CurrentHasClusteredColumnstore = 0 THEN 'No' ELSE 'N/A' END + ', '
+          IF @Version >= 11 AND @CurrentIndexType NOT IN(5, 6) SET @CurrentComment += 'HasNonClusteredColumnstore: ' + CASE WHEN @CurrentHasNonClusteredColumnstore = 1 THEN 'Yes' WHEN @CurrentHasNonClusteredColumnstore = 0 THEN 'No' ELSE 'N/A' END + ', '
           IF @Version >= 14 AND @Resumable = 'Y' SET @CurrentComment += 'Computed: ' + CASE WHEN @CurrentIsComputed = 1 THEN 'Yes' WHEN @CurrentIsComputed = 0 THEN 'No' ELSE 'N/A' END + ', '
           IF @Version >= 14 AND @Resumable = 'Y' AND @CurrentIndexType = 2 SET @CurrentComment += 'ClusteredIndexComputed: ' + CASE WHEN @CurrentIsClusteredIndexComputed = 1 THEN 'Yes' WHEN @CurrentIsClusteredIndexComputed = 0 THEN 'No' ELSE 'N/A' END + ', '
           IF @Version >= 14 AND @Resumable = 'Y' SET @CurrentComment += 'Timestamp: ' + CASE WHEN @CurrentIsTimestamp = 1 THEN 'Yes' WHEN @CurrentIsTimestamp = 0 THEN 'No' ELSE 'N/A' END + ', '
@@ -9007,7 +9051,8 @@ BEGIN
         SET @CurrentIsImageText = NULL
         SET @CurrentIsNewLOB = NULL
         SET @CurrentIsFileStream = NULL
-        SET @CurrentHasColumnstore = NULL
+        SET @CurrentHasClusteredColumnstore = NULL
+        SET @CurrentHasNonClusteredColumnstore = NULL
         SET @CurrentIsComputed = NULL
         SET @CurrentIsClusteredIndexComputed = NULL
         SET @CurrentIsTimestamp = NULL
