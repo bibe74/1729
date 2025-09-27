@@ -17,7 +17,7 @@ $ScriptsDirectory = $ScriptDirectoryBase + "\\scripts\\"
 $Source = $ScriptSourceDirectoryBase + "DarlingData\\Install-All\\DarlingData.sql"
 Copy-Item $Source -Destination $ScriptsDirectory
 $Source = $ScriptSourceDirectoryBase + "SQL-Server-First-Responder-Kit\\Install-All-Scripts.sql"
-Copy-Item $Source -Destination $ScriptsDirectory
+#Copy-Item $Source -Destination $ScriptsDirectory
 
 $ScriptsDirectory = $ScriptDirectoryBase + "\\scripts_common\\"
 
