@@ -21,6 +21,8 @@ $Source = $ScriptSourceDirectoryBase + "SQL-Server-First-Responder-Kit\\Install-
 
 $ScriptsDirectory = $ScriptDirectoryBase + "\\scripts_common\\"
 
+$Source = $ScriptSourceDirectoryBase + "sp_CheckBackup\\sp_CheckBackup.sql"
+Copy-Item $Source -Destination $ScriptsDirectory
 $Source = $ScriptSourceDirectoryBase + "sp_CheckSecurity\\sp_CheckSecurity.sql"
 Copy-Item $Source -Destination $ScriptsDirectory
 $Source = $ScriptSourceDirectoryBase + "sp_CheckTempdb\\sp_CheckTempdb.sql"
