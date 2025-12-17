@@ -58,11 +58,6 @@
             ,"sql_version":"2022"
         },
         {
-            "name":"ITBSTEST01"
-			,"group":"metra"
-            ,"sql_version":"2022"
-        },
-        {
             "name":"STAIN-SRV"
 			,"group":"metra"
             ,"sql_version":"2016"
