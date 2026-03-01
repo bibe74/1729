@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Work\\1729\\Scripts\\SQL\\DWH\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFB6247C-1414-305F-E4FD-DEB819F093CA}|DWH.ssmssqlproj|C:\\Work\\1729\\Scripts\\SQL\\DWH\\DWH_00.01_audit.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{EFB6247C-1414-305F-E4FD-DEB819F093CA}|DWH.ssmssqlproj|solutionrelative:DWH_00.01_audit.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{956e1b22-878b-499b-ac5c-2705c05370ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{956e1b22-878b-499b-ac5c-2705c05370ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{956e1b22-878b-499b-ac5c-2705c05370ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{bbc6a7c1-8d19-45e0-b59b-edfa9e16538b}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DWH_00.01_audit.sql - DWH",
+              "DocumentMoniker": "C:\\Work\\1729\\Scripts\\SQL\\DWH\\DWH_00.01_audit.sql",
+              "RelativeDocumentMoniker": "DWH_00.01_audit.sql",
+              "ToolTip": "DWH_00.01_audit.sql - DWH",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-21T11:24:56.543Z",
+              "EditorCaption": " - DWH"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ad05ebd8-2047-4068-a33c-a19f23835c0d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
