@@ -1,0 +1,27 @@
+
+CREATE PROCEDURE AX2009.usp_Create_ASSETTABLE_Cespite
+AS
+BEGIN
+SET NOCOUNT ON;
+
+CREATE TABLE AX2009.ASSETTABLE_Cespite (
+    -- Chiavi
+    DATAAREAID        CHAR(4) NOT NULL,
+    ASSETID        NVARCHAR(20) NOT NULL,
+    RECID        BIGINT NOT NULL,
+
+    -- Dimensioni
+    ASSETGROUP        NVARCHAR(10) NOT NULL,
+    NAME        NVARCHAR(30) NOT NULL
+
+
+    -- Constraint
+    CONSTRAINT PK_ASSETTABLE_Cespite PRIMARY KEY CLUSTERED (
+        DATAAREAID,
+        ASSETID
+    )
+);
+
+END;
+GO
+

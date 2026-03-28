@@ -1,0 +1,15 @@
+CREATE TABLE [AX2009].[DLVREASON_CausaleConsegna] (
+    [DATAAREAID]      CHAR (4)      NOT NULL,
+    [CODE]            NVARCHAR (10) NOT NULL,
+    [RECID]           BIGINT        NOT NULL,
+    [TXT]             NVARCHAR (60) NOT NULL,
+    [FREE]            BIT           NOT NULL,
+    [NPODLVLINETYPE]  SMALLINT      NOT NULL,
+    [NPOCONTRACTWORK] BIT           NOT NULL
+);
+GO
+
+ALTER TABLE [AX2009].[DLVREASON_CausaleConsegna]
+    ADD CONSTRAINT [PK_DLVREASON_CausaleConsegna] PRIMARY KEY CLUSTERED ([DATAAREAID] ASC, [CODE] ASC) WITH (FILLFACTOR = 100);
+GO
+

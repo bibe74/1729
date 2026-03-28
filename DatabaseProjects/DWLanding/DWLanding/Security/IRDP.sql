@@ -1,0 +1,4 @@
+CREATE SCHEMA [IRDP]
+    AUTHORIZATION [dbo];
+GO
+

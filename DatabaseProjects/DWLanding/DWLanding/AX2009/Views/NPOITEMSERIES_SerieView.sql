@@ -1,0 +1,17 @@
+
+CREATE VIEW AX2009.NPOITEMSERIES_SerieView
+AS
+SELECT
+	-- Chiavi
+	SERIESID,		-- IDSerie
+	RECID,		-- PKSerie
+
+	-- Dimensioni
+	NAME,		-- Serie
+	SYSTEMID,		-- IDSistema
+	SERIESIDAS400,		-- IDSerieAS400
+	OBSOLETE		-- IsObsoleta
+
+FROM [AXSQL\AX2009].AX2009_METRA_LIVE.dbo.NPOITEMSERIES;
+GO
+

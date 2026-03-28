@@ -1,0 +1,15 @@
+
+CREATE VIEW AX2009.TAXTABLE_CodiceIVAView
+AS
+SELECT
+	-- Chiavi
+	DATAAREAID,		-- IDAzienda
+	TAXCODE,		-- IDCodiceIVA
+	RECID,		-- PKCodiceIVA
+
+	-- Dimensioni
+	TAXNAME		-- CodiceIVA
+
+FROM [AXSQL\AX2009].AX2009_METRA_LIVE.dbo.TAXTABLE;
+GO
+

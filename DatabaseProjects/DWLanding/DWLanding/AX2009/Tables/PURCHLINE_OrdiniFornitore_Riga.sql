@@ -1,0 +1,48 @@
+CREATE TABLE [AX2009].[PURCHLINE_OrdiniFornitore_Riga] (
+    [DATAAREAID]                     CHAR (4)         NOT NULL,
+    [PURCHID]                        NVARCHAR (20)    NOT NULL,
+    [LINENUM]                        NUMERIC (28, 12) NOT NULL,
+    [RECID]                          BIGINT           NOT NULL,
+    [ITEMID]                         NVARCHAR (20)    NOT NULL,
+    [PURCHSTATUS]                    SMALLINT         NOT NULL,
+    [LEDGERACCOUNT]                  NVARCHAR (20)    NOT NULL,
+    [DELIVERYDATE]                   DATE             NOT NULL,
+    [DIMENSION]                      NVARCHAR (10)    NOT NULL,
+    [DIMENSION2_]                    NVARCHAR (10)    NOT NULL,
+    [DIMENSION3_]                    NVARCHAR (10)    NOT NULL,
+    [CONFIRMEDDLV]                   DATE             NOT NULL,
+    [INVENTTRANSID]                  NVARCHAR (20)    NOT NULL,
+    [INVENTREFID]                    NVARCHAR (20)    NOT NULL,
+    [INVENTREFTRANSID]               NVARCHAR (20)    NOT NULL,
+    [ITEMREFTYPE]                    SMALLINT         NOT NULL,
+    [INTERCOMPANYORIGIN]             SMALLINT         NOT NULL,
+    [INVENTDIMID]                    NVARCHAR (20)    NOT NULL,
+    [ASSETID]                        NVARCHAR (20)    NOT NULL,
+    [INTERCOMPANYINVENTTRANSID]      NVARCHAR (20)    NOT NULL,
+    [NPOWRKCTRGROUPID]               NVARCHAR (10)    NOT NULL,
+    [NPOPURCHPRICEEXTRA]             NUMERIC (28, 12) NOT NULL,
+    [NPOLISTPRICE]                   NUMERIC (28, 12) NOT NULL,
+    [NPOINTERCOMPANYORIGINALIN30008] NVARCHAR (20)    NOT NULL,
+    [NPOINTERCOMPANYORIGINALCU30009] NVARCHAR (20)    NOT NULL,
+    [NPOINTERCOMPANYORIGINALSALESID] NVARCHAR (20)    NOT NULL,
+    [DIMENSION4_]                    NVARCHAR (10)    NOT NULL,
+    [DIMENSION5_]                    NVARCHAR (10)    NOT NULL,
+    [DIMENSION6_]                    NVARCHAR (10)    NOT NULL,
+    [NCEMATRIXPURCHTYPE]             SMALLINT         NOT NULL,
+    [NPOORIGINALCONFIRMEDDLV]        DATE             NOT NULL,
+    [PURCHUNIT]                      NVARCHAR (10)    NOT NULL,
+    [PURCHQTY]                       NUMERIC (28, 12) NOT NULL,
+    [REMAINPURCHPHYSICAL]            NUMERIC (28, 12) NOT NULL,
+    [CURRENCYCODE]                   NVARCHAR (3)     NOT NULL,
+    [LINEAMOUNT]                     NUMERIC (28, 12) NOT NULL,
+    [PURCHPRICE]                     NUMERIC (28, 12) NOT NULL,
+    [PRICEUNIT]                      NUMERIC (28, 12) NOT NULL,
+    [LINEPERCENT]                    NUMERIC (28, 12) NOT NULL,
+    [LINEDISC]                       NUMERIC (28, 12) NOT NULL
+);
+GO
+
+ALTER TABLE [AX2009].[PURCHLINE_OrdiniFornitore_Riga]
+    ADD CONSTRAINT [PK_PURCHLINE_OrdiniFornitore_Riga] PRIMARY KEY CLUSTERED ([DATAAREAID] ASC, [PURCHID] ASC, [LINENUM] ASC, [RECID] ASC);
+GO
+

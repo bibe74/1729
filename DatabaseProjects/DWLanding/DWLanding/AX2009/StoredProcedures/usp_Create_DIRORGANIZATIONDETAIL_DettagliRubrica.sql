@@ -1,0 +1,26 @@
+
+CREATE PROCEDURE AX2009.usp_Create_DIRORGANIZATIONDETAIL_DettagliRubrica
+AS
+BEGIN
+SET NOCOUNT ON;
+
+CREATE TABLE AX2009.DIRORGANIZATIONDETAIL_DettagliRubrica (
+    -- Chiavi
+    DATAAREAID        CHAR(4) NOT NULL,
+    PARTYID        NVARCHAR(20) NOT NULL,
+    RECID        BIGINT NOT NULL,
+
+    -- Dimensioni
+    ABC        SMALLINT NOT NULL
+
+
+    -- Constraint
+    CONSTRAINT PK_DIRORGANIZATIONDETAIL_DettagliRubrica PRIMARY KEY CLUSTERED (
+        DATAAREAID,
+        PARTYID
+    )
+);
+
+END;
+GO
+

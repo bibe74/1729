@@ -1,0 +1,14 @@
+CREATE TABLE [AX2009].[COSTINGVERSION_VersioneDeterminazioneCosti] (
+    [DATAAREAID]     CHAR (4)      NOT NULL,
+    [VERSIONID]      NVARCHAR (10) NOT NULL,
+    [RECID]          BIGINT        NOT NULL,
+    [NAME]           NVARCHAR (60) NOT NULL,
+    [LASTUPDATE]     DATE          NOT NULL,
+    [LASTACTIVATION] DATE          NOT NULL
+);
+GO
+
+ALTER TABLE [AX2009].[COSTINGVERSION_VersioneDeterminazioneCosti]
+    ADD CONSTRAINT [PK_COSTINGVERSION_VersioneDeterminazioneCosti] PRIMARY KEY CLUSTERED ([DATAAREAID] ASC, [VERSIONID] ASC);
+GO
+

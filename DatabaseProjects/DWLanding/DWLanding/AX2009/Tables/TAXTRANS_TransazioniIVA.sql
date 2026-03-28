@@ -1,0 +1,34 @@
+CREATE TABLE [AX2009].[TAXTRANS_TransazioniIVA] (
+    [DATAAREAID]              CHAR (4)         NOT NULL,
+    [TRANSDATE]               DATETIME         NOT NULL,
+    [VOUCHER]                 NVARCHAR (20)    NOT NULL,
+    [RECID]                   BIGINT           NOT NULL,
+    [SOURCE]                  INT              NOT NULL,
+    [TAXCODE]                 NVARCHAR (10)    NOT NULL,
+    [ACCOUNTNUM]              NVARCHAR (20)    NOT NULL,
+    [TAXDIRECTION]            INT              NOT NULL,
+    [DIMENSION]               NVARCHAR (10)    NOT NULL,
+    [DIMENSION2_]             NVARCHAR (10)    NOT NULL,
+    [DIMENSION3_]             NVARCHAR (10)    NOT NULL,
+    [TAXGROUP]                NVARCHAR (10)    NOT NULL,
+    [TAXBOOKID]               NVARCHAR (10)    NOT NULL,
+    [TAXBOOKSECTIONID]        NVARCHAR (10)    NOT NULL,
+    [DIMENSION4_]             NVARCHAR (10)    NOT NULL,
+    [DIMENSION5_]             NVARCHAR (10)    NOT NULL,
+    [DIMENSION6_]             NVARCHAR (10)    NOT NULL,
+    [CURRENCYCODE]            NVARCHAR (3)     NOT NULL,
+    [SOURCECURRENCYCODE]      NVARCHAR (3)     NOT NULL,
+    [SOURCEBASEAMOUNTCUR]     NUMERIC (28, 12) NOT NULL,
+    [SOURCETAXAMOUNTCUR]      NUMERIC (28, 12) NOT NULL,
+    [SOURCEREGULATEAMOUNTCUR] NUMERIC (28, 12) NOT NULL,
+    [TAXBASEAMOUNTCUR]        NUMERIC (28, 12) NOT NULL,
+    [TAXAMOUNTCUR]            NUMERIC (28, 12) NOT NULL,
+    [TAXINCOSTPRICECUR]       NUMERIC (28, 12) NOT NULL,
+    [TAXINCOSTPRICEMST]       NUMERIC (28, 12) NOT NULL
+);
+GO
+
+ALTER TABLE [AX2009].[TAXTRANS_TransazioniIVA]
+    ADD CONSTRAINT [PK_TAXTRANS_TransazioniIVA] PRIMARY KEY CLUSTERED ([DATAAREAID] ASC, [TRANSDATE] ASC, [VOUCHER] ASC, [RECID] ASC);
+GO
+

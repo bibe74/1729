@@ -1,0 +1,4 @@
+CREATE SCHEMA [MRDP]
+    AUTHORIZATION [dbo];
+GO
+

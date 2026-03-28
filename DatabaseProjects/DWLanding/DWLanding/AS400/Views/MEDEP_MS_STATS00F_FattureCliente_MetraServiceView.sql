@@ -1,0 +1,3 @@
+CREATE VIEW AS400.MEDEP_MS_STATS00F_FattureCliente_MetraServiceView AS SELECT 1 AS fld;
+GO
+

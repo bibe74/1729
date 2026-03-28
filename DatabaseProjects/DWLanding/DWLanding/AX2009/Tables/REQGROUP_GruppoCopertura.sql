@@ -1,0 +1,13 @@
+CREATE TABLE [AX2009].[REQGROUP_GruppoCopertura] (
+    [DATAAREAID]          CHAR (4)      NOT NULL,
+    [REQGROUPID]          NVARCHAR (10) NOT NULL,
+    [RECID]               BIGINT        NOT NULL,
+    [NAME]                NVARCHAR (60) NOT NULL,
+    [NPOSTOCKMANAGEDITEM] BIT           NOT NULL
+);
+GO
+
+ALTER TABLE [AX2009].[REQGROUP_GruppoCopertura]
+    ADD CONSTRAINT [PK_REQGROUP_GruppoCopertura] PRIMARY KEY CLUSTERED ([DATAAREAID] ASC, [REQGROUPID] ASC);
+GO
+

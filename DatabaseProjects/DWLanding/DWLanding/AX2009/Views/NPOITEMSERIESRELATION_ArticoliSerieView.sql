@@ -1,0 +1,25 @@
+
+CREATE VIEW AX2009.NPOITEMSERIESRELATION_ArticoliSerieView
+AS
+SELECT
+	-- Chiavi
+	ITEMID,		-- IDArticolo
+	SERIESID,		-- IDSerie
+	RECID,		-- PKArticoloSerie
+
+	-- Dimensioni
+	PRODUCTTYPEID		-- IDTipoProdotto
+
+FROM (
+    SELECT
+        ITEMID,
+        SERIESID,
+        RECID,
+        PRODUCTTYPEID,
+        ROW_NUMBER() OVER (PARTITION BY ITEMID, SERIESID ORDER BY RECID) AS rn
+    
+    FROM [AXSQL\AX2009].AX2009_METRA_LIVE.dbo.NPOITEMSERIESRELATION
+) T
+WHERE T.rn = 1;
+GO
+

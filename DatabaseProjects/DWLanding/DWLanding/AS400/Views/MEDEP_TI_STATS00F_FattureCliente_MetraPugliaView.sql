@@ -1,0 +1,3 @@
+CREATE VIEW AS400.MEDEP_TI_STATS00F_FattureCliente_MetraPugliaView AS SELECT 1 AS fld;
+GO
+

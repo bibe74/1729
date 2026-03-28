@@ -1,0 +1,26 @@
+
+CREATE PROCEDURE AX2009.usp_Create_BANKACCOUNTTABLE_ContoBancario
+AS
+BEGIN
+SET NOCOUNT ON;
+
+CREATE TABLE AX2009.BANKACCOUNTTABLE_ContoBancario (
+    -- Chiavi
+    DATAAREAID        CHAR(4) NOT NULL,
+    ACCOUNTID        NVARCHAR(10) NOT NULL,
+    RECID        BIGINT NOT NULL,
+
+    -- Dimensioni
+    NAME        NVARCHAR(100) NOT NULL
+
+
+    -- Constraint
+    CONSTRAINT PK_BANKACCOUNTTABLE_ContoBancario PRIMARY KEY CLUSTERED (
+        DATAAREAID,
+        ACCOUNTID
+    )
+);
+
+END;
+GO
+

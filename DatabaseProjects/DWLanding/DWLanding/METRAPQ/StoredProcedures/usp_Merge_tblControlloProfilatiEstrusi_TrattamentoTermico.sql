@@ -1,0 +1,34 @@
+
+CREATE   PROCEDURE METRAPQ.usp_Merge_tblControlloProfilatiEstrusi_TrattamentoTermico
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE INTO METRAPQ.tblControlloProfilatiEstrusi_TrattamentoTermico AS TGT
+    USING METRAPQ.tblControlloProfilatiEstrusi_TrattamentoTermicoView AS SRC ON (
+         SRC.ID = TGT.ID 
+    )
+
+    WHEN MATCHED AND SRC.ChangeHashKey <> TGT.ChangeHashKey
+      THEN UPDATE SET TGT.ChangeHashKey = SRC.ChangeHashKey, TGT.UpdateDatetime = SRC.UpdateDatetime, TGT.IsDeleted = SRC.IsDeleted, 
+        TGT.IDControlloProfilatiEstrusi = SRC.IDControlloProfilatiEstrusi, TGT.NumeroForno = SRC.NumeroForno, TGT.DataTrattamento = SRC.DataTrattamento, TGT.NumeroInfornata = SRC.NumeroInfornata, TGT.ProvaDiPiega = SRC.ProvaDiPiega, TGT.DurezzaMax = SRC.DurezzaMax, TGT.DurezzaMin = SRC.DurezzaMin, TGT.Durometro = SRC.Durometro, TGT.Rm = SRC.Rm, TGT.Rp02 = SRC.Rp02, TGT.A = SRC.A, TGT.MacchinaTrazione = SRC.MacchinaTrazione, TGT.operatore = SRC.operatore
+
+    WHEN NOT MATCHED BY TARGET
+      THEN INSERT (ID, HistoricalHashKey, ChangeHashKey, InsertDatetime, UpdateDatetime, IsDeleted, IDControlloProfilatiEstrusi, NumeroForno, DataTrattamento, NumeroInfornata, ProvaDiPiega, DurezzaMax, DurezzaMin, Durometro, Rm, Rp02, A, MacchinaTrazione, operatore)
+        VALUES (ID, HistoricalHashKey, ChangeHashKey, InsertDatetime, UpdateDatetime, IsDeleted, IDControlloProfilatiEstrusi, NumeroForno, DataTrattamento, NumeroInfornata, ProvaDiPiega, DurezzaMax, DurezzaMin, Durometro, Rm, Rp02, A, MacchinaTrazione, operatore)
+
+    WHEN NOT MATCHED BY SOURCE AND TGT.IsDeleted = CAST(0 AS BIT)
+      THEN UPDATE SET TGT.ChangeHashKey = CONVERT(VARBINARY(32), 0),
+        TGT.UpdateDatetime = CURRENT_TIMESTAMP,
+        TGT.IsDeleted = CAST(1 AS BIT)
+    
+    OUTPUT
+        CURRENT_TIMESTAMP AS merge_datetime,
+        CASE WHEN Inserted.IsDeleted = CAST(1 AS BIT) THEN N'DELETE' ELSE $action END AS merge_action,
+        'METRAPQ.tblControlloProfilatiEstrusi_TrattamentoTermico' AS full_olap_table_name,
+         'ID = ' + CAST(COALESCE(inserted.ID, deleted.ID) AS NVARCHAR) AS primary_key_description
+    INTO audit.merge_log_details;
+
+END
+GO
+

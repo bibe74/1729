@@ -1,0 +1,4 @@
+CREATE SCHEMA [MSE]
+    AUTHORIZATION [dbo];
+GO
+

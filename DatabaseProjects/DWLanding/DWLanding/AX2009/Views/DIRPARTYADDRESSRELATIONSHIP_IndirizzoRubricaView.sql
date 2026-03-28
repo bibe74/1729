@@ -1,0 +1,19 @@
+
+CREATE VIEW AX2009.DIRPARTYADDRESSRELATIONSHIP_IndirizzoRubricaView
+AS
+SELECT
+	-- Chiavi
+	DATAAREAID,		-- IDAzienda
+	PARTYID,		-- IDRubrica
+	RECID,		-- PKIndirizzoRubrica
+
+	-- Dimensioni
+	ISPRIMARY,		-- IsPrimario
+	STATUS,		-- IDStato [enum DirPartyAddressRelationshipStatus]
+	CONVERT(DATE, VALIDTODATETIME) AS VALIDTODATETIME,		-- DataInizioValidita
+	CONVERT(DATE, VALIDFROMDATETIME) AS VALIDFROMDATETIME,		-- DataFineValidita
+	SHARED		-- IsCondiviso
+
+FROM [AXSQL\AX2009].AX2009_METRA_LIVE.dbo.DIRPARTYADDRESSRELATIONSHIP;
+GO
+

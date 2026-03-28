@@ -1,0 +1,11 @@
+
+CREATE PROCEDURE EDMSRV2016.usp_AddIndexes_Folder_Cartella
+AS
+BEGIN
+SET NOCOUNT ON;
+
+CREATE NONCLUSTERED INDEX IX_EDMSRV2016_Folder_Cartella_ParentID ON EDMSRV2016.Folder_Cartella (ParentID);
+
+END;
+GO
+

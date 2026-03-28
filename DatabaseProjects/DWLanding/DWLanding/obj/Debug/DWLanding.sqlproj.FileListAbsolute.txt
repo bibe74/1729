@@ -1,0 +1,5 @@
+c:\Work\1729\DatabaseProjects\DWLanding\DWLanding\bin\Debug\DWLanding.dacpac
+c:\Work\1729\DatabaseProjects\DWLanding\DWLanding\obj\Debug\Model.xml
+c:\Work\1729\DatabaseProjects\DWLanding\DWLanding\obj\Debug\refactor.xml
+c:\Work\1729\DatabaseProjects\DWLanding\DWLanding\obj\Debug\postdeploy.sql
+c:\Work\1729\DatabaseProjects\DWLanding\DWLanding\obj\Debug\predeploy.sql

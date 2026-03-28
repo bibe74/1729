@@ -1,0 +1,22 @@
+
+CREATE VIEW AX2009.NPOWORKCALENDARDATELINE_DataLavorativa_TurnoView
+AS
+SELECT
+	-- Chiavi
+	DATAAREAID,		-- IDAzienda
+	TRANSDATE,		-- DataCalendario
+	CALENDARID,		-- IDCalendario
+	SHIFTID,		-- IDTurno
+	MIN(RECID) AS RECID,		-- PKDataCalendario_Turno
+
+	-- Dimensioni
+	SUM(DURATION) AS DURATION,		-- SecondiTurno
+	MIN(FROMTIMESEC) AS FROMTIME		-- InizioTurno
+
+FROM [AXSQL\AX2009].AX2009_METRA_LIVE.dbo.NPOWORKCALENDARDATELINE
+GROUP BY DATAAREAID ,
+	        TRANSDATE ,
+	        CALENDARID ,
+	        SHIFTID;
+GO
+

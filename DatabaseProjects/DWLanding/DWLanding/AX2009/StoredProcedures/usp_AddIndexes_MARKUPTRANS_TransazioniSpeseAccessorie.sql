@@ -1,0 +1,11 @@
+
+CREATE PROCEDURE AX2009.usp_AddIndexes_MARKUPTRANS_TransazioniSpeseAccessorie
+AS
+BEGIN
+SET NOCOUNT ON;
+
+--CREATE NONCLUSTERED INDEX IX_AX2009_MARKUPTRANS_TransazioniSpeseAccessorie_ ON AX2009.MARKUPTRANS_TransazioniSpeseAccessorie () INCLUDE();
+
+END;
+GO
+

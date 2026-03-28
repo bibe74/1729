@@ -1,0 +1,53 @@
+CREATE TABLE [AS400].[MEDEP_RG_BFAGE00F_GruppoVendite_MetraRagusa] (
+    [CDAGE]  CHAR (2)        NOT NULL,
+    [TRB12]  CHAR (3)        NOT NULL,
+    [ATB12]  CHAR (1)        NOT NULL,
+    [NOMAG]  CHAR (35)       NOT NULL,
+    [INDAG]  CHAR (35)       NOT NULL,
+    [LOCAG]  CHAR (20)       NOT NULL,
+    [PROVN]  CHAR (2)        NOT NULL,
+    [CAPAA]  CHAR (5)        NOT NULL,
+    [PROVG]  NUMERIC (4, 2)  NOT NULL,
+    [AGPAIV] CHAR (11)       NOT NULL,
+    [AGCFIS] CHAR (16)       NOT NULL,
+    [ZONCO]  CHAR (20)       NOT NULL,
+    [ESCLU]  CHAR (1)        NOT NULL,
+    [SOCCA]  CHAR (1)        NOT NULL,
+    [RITAC]  NUMERIC (5, 2)  NOT NULL,
+    [VAPRO]  CHAR (1)        NOT NULL,
+    [TAR01]  CHAR (1)        NOT NULL,
+    [TAR02]  CHAR (1)        NOT NULL,
+    [TAR03]  CHAR (1)        NOT NULL,
+    [TAR04]  CHAR (1)        NOT NULL,
+    [TAR05]  CHAR (1)        NOT NULL,
+    [TAR06]  CHAR (1)        NOT NULL,
+    [TAR07]  CHAR (1)        NOT NULL,
+    [TAR08]  CHAR (1)        NOT NULL,
+    [TAR09]  CHAR (1)        NOT NULL,
+    [TAR10]  CHAR (1)        NOT NULL,
+    [PRO01]  NUMERIC (4, 2)  NOT NULL,
+    [PRO02]  NUMERIC (4, 2)  NOT NULL,
+    [PRO03]  NUMERIC (4, 2)  NOT NULL,
+    [PRO04]  NUMERIC (4, 2)  NOT NULL,
+    [PRO05]  NUMERIC (4, 2)  NOT NULL,
+    [PRO06]  NUMERIC (4, 2)  NOT NULL,
+    [PRO07]  NUMERIC (4, 2)  NOT NULL,
+    [PRO08]  NUMERIC (4, 2)  NOT NULL,
+    [PRO09]  NUMERIC (4, 2)  NOT NULL,
+    [PRO10]  NUMERIC (4, 2)  NOT NULL,
+    [TILIQ]  CHAR (1)        NOT NULL,
+    [FISSO]  NUMERIC (13, 2) NOT NULL,
+    [DATPR]  NUMERIC (8)     NOT NULL,
+    [BFAIV]  CHAR (2)        NOT NULL,
+    [AGCFOR] CHAR (6)        NOT NULL,
+    [AGCENA] CHAR (2)        NOT NULL,
+    [AGCFAT] CHAR (4)        NOT NULL,
+    [CDCAA]  CHAR (2)        NOT NULL,
+    [MACAR]  CHAR (3)        NOT NULL
+);
+GO
+
+ALTER TABLE [AS400].[MEDEP_RG_BFAGE00F_GruppoVendite_MetraRagusa]
+    ADD CONSTRAINT [PK_AS400_MEDEP_RG_BFAGE00F_GruppoVendite_MetraRagusa] PRIMARY KEY CLUSTERED ([CDAGE] ASC);
+GO
+

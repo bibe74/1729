@@ -1,0 +1,153 @@
+
+CREATE PROCEDURE EDMSRV2016.usp_Create_DocumentRevisionCustom_ProfiliIndustriaDatiCustom
+AS
+BEGIN
+SET NOCOUNT ON;
+
+CREATE TABLE EDMSRV2016.DocumentRevisionCustom_ProfiliIndustriaDatiCustom (
+	-- Chiavi
+	DocumentRevisionID INT NOT NULL,
+
+	HistoricalHashKey VARBINARY(20) NOT NULL,
+	ChangeHashKey VARBINARY(20) NOT NULL,
+
+	-- Attributi profili
+	c_Cliente_Agente NVARCHAR(255) NULL,
+	c_Progetto_Anno NVARCHAR(255) NULL,
+	c_Profilo_BenestareCampionatur NVARCHAR(255) NULL,
+	c_Profilo_BenestareCampiontura DATE NULL,
+	c_Profilo_BenestareDisegni DATE NULL,
+	c_Profilo_BenestareDisegni_Ute NVARCHAR(255) NULL,
+	c_Profilo_BenestareOfferta DATE NULL,
+	c_Profilo_BenestareOfferta_Ute NVARCHAR(255) NULL,
+	c_Profilo_Categoria NVARCHAR(255) NULL,
+	c_Profilo_Codice NVARCHAR(255) NULL,
+	c_Cliente_CodiceCliente NVARCHAR(255) NULL,
+	c_Profilo_CodiceCliente NVARCHAR(255) NULL,
+	c_Profilo_CodiceMatrice NVARCHAR(255) NULL,
+	c_Profilo_DataConsegnaCampioni DATE NULL,
+	c_Profilo_DataEffettivaConsegn DATE NULL,
+	c_Profilo_DataPrevConsegnaCamp DATE NULL,
+	c_Cliente_ItaliaEstero NVARCHAR(255) NULL,
+	c_Profilo_Lega NVARCHAR(255) NULL,
+	c_Profilo_Finitura NVARCHAR(255) NULL,
+	c_Profilo_FinituraDescrizione NVARCHAR(255) NULL,
+	c_Profilo_FinituraCosto DECIMAL(28, 12) NULL,
+	c_Progetto_CantiereDescrizione NVARCHAR(255) NULL,
+	c_Progetto_DataEffettivaFinePr DATE NULL,
+	c_Profilo_MotivoEsitoNegativo NVARCHAR(255) NULL,
+	c_Cliente_Nazione NVARCHAR(255) NULL,
+	c_Cliente_NomeCliente NVARCHAR(255) NULL,
+	c_Profilo_NoteResponsabile NVARCHAR(255) NULL,
+	c_Profilo_NoteUT NVARCHAR(255) NULL,
+	c_Progetto_Numero NVARCHAR(255) NULL,
+	c_Profilo_Pressa NVARCHAR(255) NULL,
+	c_Progetto_RicezioneRichiesta DATE NULL,
+	c_Profilo_SerieID NVARCHAR(255) NULL,
+	c_Profilo_SerieMetra NVARCHAR(255) NULL,
+	c_Profilo_SerieSistema NVARCHAR(255) NULL,
+	c_Profilo_SpedizioneDisegni DATE NULL,
+	c_Profilo_SpedizioneDisegni_Ut NVARCHAR(255) NULL,
+	c_Profilo_SpedizioneOfferta DATE NULL,
+	c_Profilo_SpedizioneOfferta_Ut NVARCHAR(255) NULL,
+	c_Profilo_Stato NVARCHAR(255) NULL,
+	c_Profilo_StesuraOfferta DATE NULL,
+	c_Profilo_StesuraOfferta_Utent NVARCHAR(255) NULL,
+	c_Profilo_SU_Dettaglio NVARCHAR(255) NULL,
+	c_Profilo_SU_Famiglia NVARCHAR(255) NULL,
+	c_Profilo_SU_Gruppo NVARCHAR(255) NULL,
+	c_Profilo_SU_Settore NVARCHAR(255) NULL,
+	c_Profilo_Tipologia NVARCHAR(255) NULL,
+	c_Progetto_RiferimentoRichiest NVARCHAR(255) NULL,
+	c_Progetto_ReferenteCommercial NVARCHAR(255) NULL,
+	c_Progetto_Sospeso BIT NULL,
+	c_Profilo_ValutazioneResCom DATE NULL,
+	c_Profilo_ValutazioneResCom_Ut NVARCHAR(255) NULL,
+	c_Profilo_ValutazioneUT DATE NULL,
+	c_Profilo_ValutazioneUT_Utente NVARCHAR(255) NULL,
+	c_Profilo_IncidenzaCostoMatric DECIMAL(28, 12) NULL,
+	c_Progetto_OffertaCompleta BIT NULL,
+	c_Profilo_ValutazioneTecnicaDe DATE NULL,
+	c_Profilo_ValutazioneTecn_0 NVARCHAR(255) NULL,
+	c_Profilo_ValutazioneEstrusion DATE NULL,
+	c_Profilo_ValutazioneEstr_0 NVARCHAR(255) NULL,
+	c_Profilo_ValutazioneQA DATE NULL,
+	c_Profilo_ValutazioneQA_Utente NVARCHAR(255) NULL,
+	c_Profilo_DescrizioneExtra1 NVARCHAR(255) NULL,
+	c_Profilo_DescrizioneExtra2 NVARCHAR(255) NULL,
+	c_Profilo_DescrizioneExtra3 NVARCHAR(255) NULL,
+	c_Profilo_DescrizioneExtra4 NVARCHAR(255) NULL,
+	c_Profilo_CostoExtra1 DECIMAL(28, 12) NULL,
+	c_Profilo_CostoExtra2 DECIMAL(28, 12) NULL,
+	c_Profilo_CostoExtra3 DECIMAL(28, 12) NULL,
+	c_Profilo_CostoExtra4 DECIMAL(28, 12) NULL,
+    c_Profilo_CondizioneMatrice NVARCHAR(20) NULL,
+
+	-- Misure profili
+	c_Profilo_BenestareTecnicoGior INT NULL,
+	c_Profilo_RitardoConsegnaPrevi INT NULL,
+	c_Profilo_Peso DECIMAL(28, 12) NULL,
+	c_Profilo_Scarto DECIMAL(28, 12) NULL,
+	c_Profilo_QtaMatriceKG DECIMAL(28, 12) NULL,
+	c_Profilo_CostoMatrice DECIMAL(28, 12) NULL,
+	c_Profilo_CostoMatriceCommerci DECIMAL(28, 12) NULL,
+	c_Profilo_Resa DECIMAL(28, 12) NULL,
+	c_Profilo_PrezzoVenditaKg DECIMAL(28, 12) NULL,
+
+	-- Attributi accessori
+	c_Accessorio_Stato NVARCHAR(255) NULL,
+	c_Custom_SerieID NVARCHAR(255) NULL,
+	c_Custom_SerieMetra NVARCHAR(255) NULL,
+	c_Custom_SerieSistema NVARCHAR(255) NULL,
+	c_Progetto_MacroFamiglia NVARCHAR(255) NULL,
+	c_Progetto_Famiglia NVARCHAR(255) NULL,
+	c_Accessorio_Guarnizione BIT NULL,
+	c_Fornitore_Codice NVARCHAR(255) NULL,
+	c_Fornitore_RagioneSociale NVARCHAR(255) NULL,
+	c_Accessorio_Estruso BIT NULL,
+	c_Accessorio_Codice NVARCHAR(255) NULL,
+	c_Accessorio_Descrizione NVARCHAR(255) NULL,
+	c_Progetto_QtaRichiesta NVARCHAR(255) NULL,
+	c_Progetto_SpecificaVendita NVARCHAR(255) NULL,
+	c_Progetto_Costo DECIMAL(28, 12) NULL,
+	c_Accessorio_Materiale NVARCHAR(255) NULL,
+	c_Accessorio_MaterialeComposiz NVARCHAR(255) NULL,
+	c_Accessorio_SpecificaMaterial NVARCHAR(255) NULL,
+	c_Accessorio_FinituraSuperific NVARCHAR(255) NULL,
+	c_Accessorio_NoteFinituraSuper NVARCHAR(255) NULL,
+	c_Accessorio_TrattamentoFinitu NVARCHAR(255) NULL,
+	c_Accessorio_EstrusoRifer_0 NVARCHAR(255) NULL,
+	c_Accessorio_EstrusoRifer_1 NVARCHAR(255) NULL,
+	c_Accessorio_EstrusoRifer_2 NVARCHAR(255) NULL,
+	c_Accessorio_EstrusoRifer_3 NVARCHAR(255) NULL,
+	c_Accessorio_DataAttesaBenesta DATE NULL,
+	c_Accessorio_UtenteAttesaBenes NVARCHAR(255) NULL,
+	c_Accessorio_DataAttesaCampion DATE NULL,
+	c_Accessorio_UtenteAttesaCampi NVARCHAR(255) NULL,
+	c_Accessorio_DataBenestareComm DATE NULL,
+	c_Accessorio_UtenteBenestareCo NVARCHAR(255) NULL,
+	c_Accessorio_DataFineProgetto DATE NULL,
+	c_Accessorio_UtenteFineProgett NVARCHAR(255) NULL,
+	c_Accessorio_DataRichiestaOffe DATE NULL,
+	c_Accessorio_UtenteRichiestaOf NVARCHAR(255) NULL,
+	c_Accessorio_DataValutazioneOf DATE NULL,
+	c_Accessorio_UtenteValutazione NVARCHAR(255) NULL,
+	c_Progetto_SincronizzaAX BIT NULL,
+	c_Cliente_CodiceClienteOriginario NVARCHAR(255) NULL,
+	c_Progetto_Societa NVARCHAR(255) NULL,
+    c_Progetto_ProgettoMaster NVARCHAR(255) NULL,
+
+	-- Misure accessori
+	c_Progetto_Ammortamenti DECIMAL(28, 12) NULL,
+
+    c_Progetto_Lavorazioni BIT NULL
+
+	-- Constraint
+	CONSTRAINT PK_EDMSRV2016_DocumentRevisionCustom_ProfiliIndustriaDatiCustom PRIMARY KEY CLUSTERED (
+		DocumentRevisionID
+	)
+);
+
+END;
+GO
+

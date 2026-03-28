@@ -1,0 +1,101 @@
+
+CREATE PROCEDURE setup.usp_Load_columns_MES40_RDP
+AS
+BEGIN
+
+SET NOCOUNT ON;
+
+IF OBJECT_ID(N'setup.columns_MES40_RDP', N'U') IS NULL
+BEGIN
+	EXEC setup.usp_Create_columns_MES40_RDP;
+END;
+
+BEGIN TRAN
+
+DECLARE @lengthtypes NVARCHAR(150) = N'char,nchar,varchar,nvarchar,';
+--DECLARE @nlengthtypes NVARCHAR(150) = N'nchar,nvarchar,';
+DECLARE @precscaletypes NVARCHAR(150) = N'numeric,';
+
+MERGE INTO setup.columns_MES40_RDP AS TGT
+USING (
+	SELECT
+		schema_name + '.' + table_name AS full_table_name,
+		2010 + column_id AS column_id,
+		column_id AS column_real_id,
+		column_name,
+		UPPER(column_type) + CASE
+		  WHEN CHARINDEX(column_type + ',', @lengthtypes) > 0 THEN '(' + CONVERT(NVARCHAR, column_length) + ')'
+		  WHEN CHARINDEX(column_type + ',', @precscaletypes) > 0 THEN '(' + RTRIM(column_precision) + ', ' + RTRIM(column_scale) + ')'
+		  ELSE ''
+		END AS column_full_type,
+		0 AS is_olap_column,
+		column_name AS column_olap_name,
+		N'' AS column_olap_enumname,
+		column_type,
+		column_length,
+		column_precision,
+		column_scale,
+		is_nullable
+
+	FROM setup.all_columns_MES40_RDP C
+    --INNER JOIN setup.tables_MES40_RDP T ON T.full_table_name = C.schema_name + '.' + C.table_name
+) AS SRC
+ON SRC.full_table_name = TGT.full_table_name AND SRC.column_name = TGT.column_name
+WHEN NOT MATCHED 
+THEN INSERT VALUES (
+	full_table_name,
+	column_id,
+	column_real_id,
+	column_name,
+	column_full_type,
+	is_olap_column,
+	column_olap_name,
+	column_olap_enumname,
+	column_type,
+	column_length,
+	column_precision,
+	column_scale,
+	is_nullable
+)
+--WHEN NOT MATCHED BY SOURCE THEN DELETE -- Non cancello mai i campi!
+OUTPUT
+	$action AS ChangeType,
+	COALESCE(inserted.full_table_name, deleted.full_table_name) AS full_table_name,
+	COALESCE(inserted.column_name, deleted.column_name) AS column_name;
+
+COMMIT
+
+BEGIN TRAN
+
+SELECT *,
+	column_full_type_new = UPPER(column_type) + '(' + CONVERT(NVARCHAR, column_length / 2) + ')'
+FROM setup.columns_MES40_RDP
+WHERE column_type IN (N'nchar', N'nvarchar')
+	AND column_full_type <> UPPER(column_type) + '(' + CONVERT(NVARCHAR, column_length / 2) + ')';
+
+UPDATE setup.columns_MES40_RDP
+SET column_full_type = UPPER(column_type) + '(' + CONVERT(NVARCHAR, column_length / 2) + ')'
+WHERE column_type IN (N'nchar', N'nvarchar')
+	AND column_full_type <> UPPER(column_type) + '(' + CONVERT(NVARCHAR, column_length / 2) + ')';
+
+UPDATE setup.columns_MES40_RDP
+SET column_type = N'CHAR',
+	column_length = 4,
+	column_full_type = N'CHAR(4)'
+WHERE (
+	column_name = N'DATAAREAID'
+	OR column_name LIKE N'%COMPANYID'
+)
+AND column_full_type = N'NVARCHAR(4)';
+
+SELECT *,
+	column_full_type_new = UPPER(column_type) + '(' + CONVERT(NVARCHAR, column_length / 2) + ')'
+FROM setup.columns_MES40_RDP
+WHERE column_type IN (N'nchar', N'nvarchar')
+	AND column_full_type <> UPPER(column_type) + '(' + CONVERT(NVARCHAR, column_length / 2) + ')';
+
+COMMIT
+
+END;
+GO
+

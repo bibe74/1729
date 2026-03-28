@@ -1,0 +1,3 @@
+CREATE USER [utRO_LS] FOR LOGIN [utRO_LS];
+GO
+

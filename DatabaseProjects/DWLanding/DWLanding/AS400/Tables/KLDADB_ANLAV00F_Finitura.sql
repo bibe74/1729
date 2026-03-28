@@ -1,0 +1,42 @@
+CREATE TABLE [AS400].[KLDADB_ANLAV00F_Finitura] (
+    [LAVCD]  CHAR (3)    NOT NULL,
+    [LAVDL]  CHAR (1)    NOT NULL,
+    [LAVDS]  CHAR (20)   NOT NULL,
+    [LAVF1]  CHAR (1)    NOT NULL,
+    [LAVF2]  CHAR (1)    NOT NULL,
+    [LAVF3]  CHAR (1)    NOT NULL,
+    [LAVF4]  CHAR (1)    NOT NULL,
+    [LAVFB]  CHAR (1)    NOT NULL,
+    [LAVFS]  CHAR (1)    NOT NULL,
+    [LAVC1]  CHAR (3)    NOT NULL,
+    [LAVC2]  CHAR (3)    NOT NULL,
+    [LAVFD]  CHAR (1)    NOT NULL,
+    [LAVIN]  NUMERIC (2) NOT NULL,
+    [LAVIE]  CHAR (1)    NOT NULL,
+    [LAVFR]  CHAR (1)    NOT NULL,
+    [LAV08]  CHAR (1)    NOT NULL,
+    [CMPAC]  CHAR (4)    NOT NULL,
+    [OKWEBL] CHAR (1)    NOT NULL,
+    [CMRGF]  CHAR (2)    NOT NULL,
+    [DELTSS] NUMERIC (3) NOT NULL,
+    [DELTGG] NUMERIC (3) NOT NULL,
+    [LAVTT]  CHAR (1)    NOT NULL,
+    [LAVVM]  CHAR (1)    NOT NULL,
+    [LAVNA]  CHAR (1)    NOT NULL,
+    [LAVUB]  CHAR (10)   NOT NULL,
+    [LAVFM]  CHAR (1)    NOT NULL,
+    [LAVML]  CHAR (3)    NOT NULL,
+    [LAULA]  CHAR (2)    NOT NULL,
+    [LAVRL]  CHAR (3)    NOT NULL,
+    [LAVF5]  CHAR (1)    NOT NULL,
+    [LAVF6]  CHAR (1)    NOT NULL,
+    [LAVF7]  CHAR (1)    NOT NULL,
+    [LAVF8]  CHAR (1)    NOT NULL,
+    [LAVF9]  CHAR (1)    NOT NULL
+);
+GO
+
+ALTER TABLE [AS400].[KLDADB_ANLAV00F_Finitura]
+    ADD CONSTRAINT [PK_AS400_KLDADB_ANLAV00F_Finitura] PRIMARY KEY CLUSTERED ([LAVCD] ASC);
+GO
+

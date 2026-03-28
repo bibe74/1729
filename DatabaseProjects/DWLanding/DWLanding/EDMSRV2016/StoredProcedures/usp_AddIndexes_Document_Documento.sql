@@ -1,0 +1,11 @@
+
+CREATE PROCEDURE EDMSRV2016.usp_AddIndexes_Document_Documento
+AS
+BEGIN
+SET NOCOUNT ON;
+
+--CREATE NONCLUSTERED INDEX IX_EDMSRV2016_Document_Documento_ ON EDMSRV2016.Document_Documento () INCLUDE();
+
+END;
+GO
+

@@ -1,0 +1,16 @@
+
+CREATE VIEW AX2009.NPOPBAFINISHINGDETAILSBOM_FinituraArticoloDBAView
+AS
+SELECT
+	-- Chiavi
+	DATAAREAID,  -- IDAzienda
+	NPOPBAFINISHINGID,  -- IDFinitura
+	ITEMIDDEFAULT,  -- IDArticoloConfiguratoDefault
+	RECID,  -- PKFinituraArticoloDBA
+
+	-- Dimensioni
+	DEFAULT_  -- IsDefault
+
+FROM [AXSQL\AX2009].AX2009_METRA_LIVE.dbo.NPOPBAFINISHINGDETAILSBOM;
+GO
+

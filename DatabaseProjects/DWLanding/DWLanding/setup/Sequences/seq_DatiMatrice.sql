@@ -1,0 +1,8 @@
+CREATE SEQUENCE [setup].[seq_DatiMatrice]
+    AS BIGINT
+    START WITH 50001
+    INCREMENT BY 1
+    MINVALUE 1
+    CACHE 1000;
+GO
+

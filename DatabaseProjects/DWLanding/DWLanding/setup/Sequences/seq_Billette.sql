@@ -1,0 +1,8 @@
+CREATE SEQUENCE [setup].[seq_Billette]
+    AS BIGINT
+    START WITH 4000001
+    INCREMENT BY 1
+    MINVALUE 1
+    CACHE 1000;
+GO
+

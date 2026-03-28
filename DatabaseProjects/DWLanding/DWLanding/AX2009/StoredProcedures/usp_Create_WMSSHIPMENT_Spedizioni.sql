@@ -1,0 +1,26 @@
+
+CREATE PROCEDURE AX2009.usp_Create_WMSSHIPMENT_Spedizioni
+AS
+BEGIN
+SET NOCOUNT ON;
+
+CREATE TABLE AX2009.WMSSHIPMENT_Spedizioni (
+    -- Chiavi
+    DATAAREAID        CHAR(4) NOT NULL,
+    SHIPMENTID        NVARCHAR(10) NOT NULL,
+    RECID        BIGINT NOT NULL,
+
+    -- Dimensioni
+    NPOWMSSHIPMENTSTAGING        BIT NOT NULL
+
+
+    -- Constraint
+    CONSTRAINT PK_WMSSHIPMENT_Spedizioni PRIMARY KEY CLUSTERED (
+        DATAAREAID,
+        SHIPMENTID
+    )
+);
+
+END;
+GO
+

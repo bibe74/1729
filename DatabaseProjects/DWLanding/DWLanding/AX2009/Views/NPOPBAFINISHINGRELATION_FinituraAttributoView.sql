@@ -1,0 +1,16 @@
+
+CREATE VIEW AX2009.NPOPBAFINISHINGRELATION_FinituraAttributoView
+AS
+SELECT
+	-- Chiavi
+	FINISHINGID,		-- IDFinitura
+	IDDETAIL,		-- IDAttributo
+	RECID,		-- PKFinituraAttributo
+
+	-- Dimensioni
+	DETAILDESCRIPTION,		-- Attributo
+	DETAILLEVEL		-- Livello
+
+FROM [AXSQL\AX2009].AX2009_METRA_LIVE.dbo.NPOPBAFINISHINGRELATION;
+GO
+
