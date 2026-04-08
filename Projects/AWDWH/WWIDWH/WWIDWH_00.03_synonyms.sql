@@ -1,8 +1,0 @@
-/*
-SET NOEXEC OFF;
---*/ SET NOEXEC ON;
-GO
-
-USE WWIDWH;
-GO
-
