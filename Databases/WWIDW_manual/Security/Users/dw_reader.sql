@@ -1,2 +1,0 @@
-CREATE USER [dw_reader] WITHOUT LOGIN
-GO

@@ -1,6 +1,0 @@
-INSERT INTO [XMLCodifiche].[TipoDocumentoEsterno] ([IDTipoDocumentoEsterno], [TipoDocumentoEsterno]) VALUES ('    ', N'')
-INSERT INTO [XMLCodifiche].[TipoDocumentoEsterno] ([IDTipoDocumentoEsterno], [TipoDocumentoEsterno]) VALUES ('CNTR', N'contratto')
-INSERT INTO [XMLCodifiche].[TipoDocumentoEsterno] ([IDTipoDocumentoEsterno], [TipoDocumentoEsterno]) VALUES ('CNVN', N'convenzione')
-INSERT INTO [XMLCodifiche].[TipoDocumentoEsterno] ([IDTipoDocumentoEsterno], [TipoDocumentoEsterno]) VALUES ('FTCL', N'fattura collegata')
-INSERT INTO [XMLCodifiche].[TipoDocumentoEsterno] ([IDTipoDocumentoEsterno], [TipoDocumentoEsterno]) VALUES ('OACQ', N'ordine acquisto')
-INSERT INTO [XMLCodifiche].[TipoDocumentoEsterno] ([IDTipoDocumentoEsterno], [TipoDocumentoEsterno]) VALUES ('RCZN', N'ricezione')

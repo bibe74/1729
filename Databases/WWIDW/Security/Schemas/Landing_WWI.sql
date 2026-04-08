@@ -1,3 +1,0 @@
-CREATE SCHEMA [Landing_WWI]
-AUTHORIZATION [dbo]
-GO
