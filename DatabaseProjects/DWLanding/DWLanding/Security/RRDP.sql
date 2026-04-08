@@ -1,4 +1,0 @@
-CREATE SCHEMA [RRDP]
-    AUTHORIZATION [dbo];
-GO
-

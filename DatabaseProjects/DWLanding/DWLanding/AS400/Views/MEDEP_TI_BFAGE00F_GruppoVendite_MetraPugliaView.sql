@@ -1,3 +1,0 @@
-CREATE VIEW AS400.[MEDEP_TI_BFAGE00F_GruppoVendite_MetraPugliaView] AS SELECT 1 AS fld;
-GO
-

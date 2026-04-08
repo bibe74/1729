@@ -1,3 +1,0 @@
-CREATE USER [utRO_LS_TEST];
-GO
-

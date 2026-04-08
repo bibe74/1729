@@ -1,4 +1,0 @@
-CREATE SCHEMA [MRDA]
-    AUTHORIZATION [dbo];
-GO
-
